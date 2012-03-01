@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nifficiency-Scheduler", "Nifficiency-Scheduler\Nifficiency-Scheduler.csproj", "{FB70D26C-74A5-4CF3-ADA1-304668393E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nifficiency-Scheduler-Test", "Nifficiency-Scheduler-Test\Nifficiency-Scheduler-Test.csproj", "{3642B908-B224-4FFE-8673-668396F43A1B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB70D26C-74A5-4CF3-ADA1-304668393E03} = {FB70D26C-74A5-4CF3-ADA1-304668393E03}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{284DADF6-D6ED-455B-8E13-1811E83A1A08}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Nifficiency-Scheduler.vsmdi = Nifficiency-Scheduler.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://140.211.126.148:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Nifficiency-Scheduler\\Nifficiency-Scheduler.csproj
+		SccProjectName1 = Nifficiency-Scheduler
+		SccLocalPath1 = Nifficiency-Scheduler
+		SccProjectUniqueName2 = Nifficiency-Scheduler-Test\\Nifficiency-Scheduler-Test.csproj
+		SccProjectName2 = Nifficiency-Scheduler-Test
+		SccLocalPath2 = Nifficiency-Scheduler-Test
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Nifficiency-Scheduler.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB70D26C-74A5-4CF3-ADA1-304668393E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB70D26C-74A5-4CF3-ADA1-304668393E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB70D26C-74A5-4CF3-ADA1-304668393E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB70D26C-74A5-4CF3-ADA1-304668393E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3642B908-B224-4FFE-8673-668396F43A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3642B908-B224-4FFE-8673-668396F43A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3642B908-B224-4FFE-8673-668396F43A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3642B908-B224-4FFE-8673-668396F43A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,101 @@
+
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'Nifficiency_Scheduler')
+DROP DATABASE [Nifficiency_Scheduler]
+GO
+
+
+
+CREATE DATABASE [Nifficiency_Scheduler] 
+GO
+
+USE [Nifficiency_Scheduler]
+GO
+
+
+CREATE TABLE [dbo].[COURSE](
+	[CID] [int] NOT NULL,
+	[DID] [int] NOT NULL,
+	[Description] [nvarchar](max) NOT NULL,
+	[Hours] [int] NOT NULL,
+ CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
+(
+	[CID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[DateTime](
+	[TID] [int] NOT NULL,
+	[Start] [time](7) NOT NULL,
+	[Stop] [time](7) NOT NULL,
+	[Days] [nvarchar](10) NOT NULL,
+ CONSTRAINT [PK_DateTime] PRIMARY KEY CLUSTERED 
+(
+	[TID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[Department](
+	[DID] [int] NOT NULL,
+	[Department] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED 
+(
+	[DID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[Faculty](
+	[FID] [int] NOT NULL,
+	[First] [nvarchar](max) NULL,
+	[Last] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Faculty] PRIMARY KEY CLUSTERED 
+(
+	[FID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[Room](
+	[RID] [int] NOT NULL,
+	[Building] [nvarchar](10) NOT NULL,
+	[number] [nvarchar](10) NOT NULL,
+ CONSTRAINT [PK_Room] PRIMARY KEY CLUSTERED 
+(
+	[RID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[Schedule](
+	[CRN] [int] NOT NULL,
+	[SeatsAdvailble] [int] NOT NULL,
+	[SeatsMax] [int] NOT NULL,
+	[StartDate] [date] NOT NULL,
+	[EndDate] [date] NOT NULL,
+	[Fee] [int] NULL,
+	[FeeType] [nchar](10) NULL,
+	[CID] [int] NOT NULL,
+	[FID] [int] NOT NULL,
+	[RID] [int] NOT NULL,
+	[TID] [int] NOT NULL,
+ CONSTRAINT [PK_Schedule] PRIMARY KEY CLUSTERED 
+(
+	[CRN] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
