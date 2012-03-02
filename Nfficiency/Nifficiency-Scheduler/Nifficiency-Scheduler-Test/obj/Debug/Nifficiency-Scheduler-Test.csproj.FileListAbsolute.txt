@@ -1,0 +1,5 @@
+C:\Users\Acidraven\425\Nfficiency\Nifficiency-Scheduler\Nifficiency-Scheduler-Test\bin\Debug\Nifficiency-Scheduler-Test.dll
+C:\Users\Acidraven\425\Nfficiency\Nifficiency-Scheduler\Nifficiency-Scheduler-Test\bin\Debug\Nifficiency-Scheduler-Test.pdb
+C:\Users\Acidraven\425\Nfficiency\Nifficiency-Scheduler\Nifficiency-Scheduler-Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Acidraven\425\Nfficiency\Nifficiency-Scheduler\Nifficiency-Scheduler-Test\obj\Debug\Nifficiency-Scheduler-Test.dll
+C:\Users\Acidraven\425\Nfficiency\Nifficiency-Scheduler\Nifficiency-Scheduler-Test\obj\Debug\Nifficiency-Scheduler-Test.pdb

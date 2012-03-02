@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b93d32de-1477-4740-8d90-258c3cc29cf7" name="Acidraven@MELCHIOR 2012-02-13 11:19:53" runUser="MELCHIOR\Acidraven" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0a338681-64dc-4647-ad2b-11cf0fd849f1">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Acidraven_MELCHIOR 2012-02-13 11_19_53">
+      <DeploymentItem filename="C:\Users\Acidraven\425\Nfficiency\WouSchedulerProject\WouSchedulerProject\bin\WouSchedulerProject.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-02-13T11:19:53.2817304-08:00" queuing="2012-02-13T11:19:58.1650097-08:00" start="2012-02-13T11:19:58.3160184-08:00" finish="2012-02-13T11:20:00.1311222-08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" error="0" failed="4" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="UpdateCourseTest" storage="c:\users\acidraven\425\nfficiency\wouschedulerproject\woustest\bin\debug\woustest.dll" id="7db97b20-02cc-0870-363d-de2a032aed4b">
+      <Execution id="644e7b1c-ef32-43f4-bc8d-51aabb5f4606" />
+      <TestMethod codeBase="C:/Users/Acidraven/425/Nfficiency/WouSchedulerProject/WouSTest/bin/Debug/WouSTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="WouSTest.CourseDBTest, WouSTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="UpdateCourseTest" />
+      <AspNet webSiteUrl="http://localhost:51491/">
+        <Host pathToWebApp="c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="InsertCourseTest" storage="c:\users\acidraven\425\nfficiency\wouschedulerproject\woustest\bin\debug\woustest.dll" id="484c9c3b-a00f-87d5-077c-c609185d0194">
+      <Execution id="3439d821-84ba-44c2-9326-b30e4eb49122" />
+      <TestMethod codeBase="C:/Users/Acidraven/425/Nfficiency/WouSchedulerProject/WouSTest/bin/Debug/WouSTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="WouSTest.CourseDBTest, WouSTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InsertCourseTest" />
+      <AspNet webSiteUrl="http://localhost:51491/">
+        <Host pathToWebApp="c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="DeleteCourseTest" storage="c:\users\acidraven\425\nfficiency\wouschedulerproject\woustest\bin\debug\woustest.dll" id="1027c059-cf07-8e59-34e7-2808e4deea1f">
+      <Execution id="ee8419ea-8568-48cb-9b4c-d585c27d08b1" />
+      <TestMethod codeBase="C:/Users/Acidraven/425/Nfficiency/WouSchedulerProject/WouSTest/bin/Debug/WouSTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="WouSTest.CourseDBTest, WouSTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DeleteCourseTest" />
+      <AspNet webSiteUrl="http://localhost:51491/">
+        <Host pathToWebApp="c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="GetConnectionStringTest" storage="c:\users\acidraven\425\nfficiency\wouschedulerproject\woustest\bin\debug\woustest.dll" id="2d4be4bc-6eba-c3f3-29d1-1f402704a3e9">
+      <DeploymentItems>
+        <DeploymentItem filename="WouSchedulerProject.dll" />
+      </DeploymentItems>
+      <Execution id="0a696ca4-8b44-4afa-b69d-d015e5a62d4e" />
+      <TestMethod codeBase="C:/Users/Acidraven/425/Nfficiency/WouSchedulerProject/WouSTest/bin/Debug/WouSTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="WouSTest.CourseDBTest, WouSTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetConnectionStringTest" />
+      <AspNet webSiteUrl="http://localhost:51491/">
+        <Host pathToWebApp="c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="1027c059-cf07-8e59-34e7-2808e4deea1f" executionId="ee8419ea-8568-48cb-9b4c-d585c27d08b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d4be4bc-6eba-c3f3-29d1-1f402704a3e9" executionId="0a696ca4-8b44-4afa-b69d-d015e5a62d4e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="484c9c3b-a00f-87d5-077c-c609185d0194" executionId="3439d821-84ba-44c2-9326-b30e4eb49122" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7db97b20-02cc-0870-363d-de2a032aed4b" executionId="644e7b1c-ef32-43f4-bc8d-51aabb5f4606" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="ee8419ea-8568-48cb-9b4c-d585c27d08b1" testId="1027c059-cf07-8e59-34e7-2808e4deea1f" testName="DeleteCourseTest" computerName="MELCHIOR" startTime="2012-02-13T11:19:59.8201044-08:00" endTime="2012-02-13T11:20:00.0241161-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee8419ea-8568-48cb-9b4c-d585c27d08b1">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web site path 'c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject' does not exist. Tests configured to run in ASP.NET Development Server must specify a valid path to the Web site. Correct the AspNetDevelopmentServerHost attribute for the test. For more information about ASP.NET unit tests, see "How to: Create an ASP.NET Unit Test" (http://go.microsoft.com/fwlink/?LinkId=62608) and "Testing Web Services" (http://go.microsoft.com/fwlink/?LinkId=62609) in the MSDN Library.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0a696ca4-8b44-4afa-b69d-d015e5a62d4e" testId="2d4be4bc-6eba-c3f3-29d1-1f402704a3e9" testName="GetConnectionStringTest" computerName="MELCHIOR" startTime="2012-02-13T11:20:00.0351167-08:00" endTime="2012-02-13T11:20:00.0611182-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a696ca4-8b44-4afa-b69d-d015e5a62d4e">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web site path 'c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject' does not exist. Tests configured to run in ASP.NET Development Server must specify a valid path to the Web site. Correct the AspNetDevelopmentServerHost attribute for the test. For more information about ASP.NET unit tests, see "How to: Create an ASP.NET Unit Test" (http://go.microsoft.com/fwlink/?LinkId=62608) and "Testing Web Services" (http://go.microsoft.com/fwlink/?LinkId=62609) in the MSDN Library.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3439d821-84ba-44c2-9326-b30e4eb49122" testId="484c9c3b-a00f-87d5-077c-c609185d0194" testName="InsertCourseTest" computerName="MELCHIOR" startTime="2012-02-13T11:20:00.0671185-08:00" endTime="2012-02-13T11:20:00.0871197-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3439d821-84ba-44c2-9326-b30e4eb49122">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web site path 'c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject' does not exist. Tests configured to run in ASP.NET Development Server must specify a valid path to the Web site. Correct the AspNetDevelopmentServerHost attribute for the test. For more information about ASP.NET unit tests, see "How to: Create an ASP.NET Unit Test" (http://go.microsoft.com/fwlink/?LinkId=62608) and "Testing Web Services" (http://go.microsoft.com/fwlink/?LinkId=62609) in the MSDN Library.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="644e7b1c-ef32-43f4-bc8d-51aabb5f4606" testId="7db97b20-02cc-0870-363d-de2a032aed4b" testName="UpdateCourseTest" computerName="MELCHIOR" startTime="2012-02-13T11:20:00.0931200-08:00" endTime="2012-02-13T11:20:00.1131211-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="644e7b1c-ef32-43f4-bc8d-51aabb5f4606">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web site path 'c:\users\jobs\documents\visual studio 2010\Projects\WouSchedulerProject\WouSchedulerProject' does not exist. Tests configured to run in ASP.NET Development Server must specify a valid path to the Web site. Correct the AspNetDevelopmentServerHost attribute for the test. For more information about ASP.NET unit tests, see "How to: Create an ASP.NET Unit Test" (http://go.microsoft.com/fwlink/?LinkId=62608) and "Testing Web Services" (http://go.microsoft.com/fwlink/?LinkId=62609) in the MSDN Library.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

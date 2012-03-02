@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="WouSchedulerProject.View.User.User" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../../Styles/MasterStyle.css" rel="stylesheet" type="text/css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table style="width: 775px;" align="center">
+        <tr>
+            <td bgcolor="Maroon">
+                <div id="logo" align="left">
+                    <asp:ImageButton ID="ImageButton1" runat="server" 
+                        ImageUrl="~/Images/wouLogo1.png" PostBackUrl="~/Default.aspx" />
+                </div>
+                <div id="admin" align="right">
+                    Student User
+                </div>
+            </td>      
+        </tr>
+        <tr align="center">    
+            <td align="center">
+        <ul>
+            <li><a href="UserQuery.aspx">Search</a></li>
+            <li><a href="UserResults.aspx">Results</a></li>           
+        </ul>
+            </td>
+        </tr>
+    </table>
+
+    
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

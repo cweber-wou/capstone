@@ -1,0 +1,5 @@
+C:\Users\Acidraven\425\Nfficiency\WouSchedulerProject\WouSchedulerProject\bin\WouSchedulerProject.dll
+C:\Users\Acidraven\425\Nfficiency\WouSchedulerProject\WouSchedulerProject\bin\WouSchedulerProject.pdb
+C:\Users\Acidraven\425\Nfficiency\WouSchedulerProject\WouSchedulerProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Acidraven\425\Nfficiency\WouSchedulerProject\WouSchedulerProject\obj\Debug\WouSchedulerProject.dll
+C:\Users\Acidraven\425\Nfficiency\WouSchedulerProject\WouSchedulerProject\obj\Debug\WouSchedulerProject.pdb

@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WouSchedulerProject", "WouSchedulerProject\WouSchedulerProject.csproj", "{195D80FF-4475-4B00-96EE-151E5309E37B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WouSTest", "WouSTest\WouSTest.csproj", "{249374BE-F081-4DA4-AE9B-B1A0A5FF85C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC3BC690-2F54-4D08-B29F-14CEBB15EFDC}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		WouSchedulerProject.vsmdi = WouSchedulerProject.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://140.211.126.148:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WouSchedulerProject\\WouSchedulerProject.csproj
+		SccProjectName1 = WouSchedulerProject
+		SccLocalPath1 = WouSchedulerProject
+		SccProjectUniqueName2 = WouSTest\\WouSTest.csproj
+		SccProjectName2 = WouSTest
+		SccLocalPath2 = WouSTest
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WouSchedulerProject.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{195D80FF-4475-4B00-96EE-151E5309E37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195D80FF-4475-4B00-96EE-151E5309E37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195D80FF-4475-4B00-96EE-151E5309E37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195D80FF-4475-4B00-96EE-151E5309E37B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249374BE-F081-4DA4-AE9B-B1A0A5FF85C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249374BE-F081-4DA4-AE9B-B1A0A5FF85C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249374BE-F081-4DA4-AE9B-B1A0A5FF85C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249374BE-F081-4DA4-AE9B-B1A0A5FF85C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
