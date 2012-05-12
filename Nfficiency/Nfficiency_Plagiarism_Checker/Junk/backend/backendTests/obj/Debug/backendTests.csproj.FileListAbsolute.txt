@@ -1,0 +1,7 @@
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\bin\Debug\backendTests.dll
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\bin\Debug\backendTests.pdb
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\bin\Debug\backend.dll
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\bin\Debug\backend.pdb
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\obj\Debug\backendTests.dll
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\obj\Debug\backendTests.pdb

@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="internalMasterPage.master.cs" Inherits="internalMasterPage" %>
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>CS470 Final Project</title>
+    <link href="Styles/Internal.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="height: 722px">
+    <form id="form1" runat="server">
+    <div id="page">
+        <div id="header" >
+        </div>
+        <div id="sidebar">
+            <p class="link">
+                <asp:HyperLink ID="HyperLink1" runat="server" 
+                NavigateUrl="~/App.aspx" ForeColor="DarkGreen">Search</asp:HyperLink></p>
+            <p class="link">
+                <asp:HyperLink ID="HyperLink2" runat="server"
+                NavigateUrl="~/EditPage.aspx" ForeColor="DarkGreen">Add Assignment</asp:HyperLink></p>
+            <p class="link">
+                <asp:HyperLink ID="HyperLink3" runat="server"
+                NavigateUrl="~/EditPage.aspx" ForeColor="DarkGreen">Edit Assignment</asp:HyperLink></p>
+            <p class="link">
+                <asp:HyperLink ID="HyperLink5" runat="server"
+                NavigateUrl="~/SurvayPage.aspx" ForeColor="DarkGreen">Survay</asp:HyperLink></p>
+            <p class="link">
+                <asp:HyperLink ID="HyperLink4" runat="server"
+                NavigateUrl="~/Main.aspx" ForeColor="DarkGreen">Logout</asp:HyperLink></p>
+        </div>
+        <p id="message"><asp:Label ID="lblMessage" runat="server"></asp:Label></p>
+        <div id="main">
+            <asp:ContentPlaceHolder id="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

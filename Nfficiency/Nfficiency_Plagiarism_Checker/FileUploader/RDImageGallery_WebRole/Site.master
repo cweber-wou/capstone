@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>CS470 Final Project</title>
+    <link href="Styles/Main.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="page">
+        <div id="header" >
+        </div>
+        <div id="sidebar">
+            <p class="link">
+                <asp:HyperLink ID="HyperLink1" runat="server" 
+                NavigateUrl="~/Main.aspx" ForeColor="lavender">Main</asp:HyperLink></p>
+            <p class="link">
+                <asp:HyperLink ID="HyperLink2" runat="server"
+                NavigateUrl="~/Login.aspx" ForeColor="lavender">Login</asp:HyperLink></p>
+            <p class="link">
+                <asp:HyperLink ID="HyperLink3" runat="server"
+                NavigateUrl="http://www.google.com" ForeColor="lavender">Exit to Google</asp:HyperLink></p>
+             </div>
+        <div id="main">
+            <asp:ContentPlaceHolder id="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <p id="message"><asp:Label ID="lblMessage" runat="server"></asp:Label></p>
+    </div>
+    </form>
+</body>
+</html>

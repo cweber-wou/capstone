@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="48d714e4-f84c-4ca8-b36b-51b2c138c25f" name="Acidraven@MELCHIOR 2012-04-23 10:28:59" runUser="Melchior\Acidraven" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0a01271d-960a-4c85-84b9-809b484ebc20">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Acidraven_MELCHIOR 2012-04-23 10_28_59">
+      <DeploymentItem filename="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend\bin\backend.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-23T10:28:59.0408876-07:00" queuing="2012-04-23T10:29:00.0669463-07:00" start="2012-04-23T10:29:01.0620032-07:00" finish="2012-04-23T10:29:05.2022400-07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="3" executed="3" passed="1" error="2" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="c30a899f-8147-53dc-4c96-830f00cb71e4">
+      <Execution id="2fe453c3-5487-4fa0-aeea-821252694ad1" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.UnitTest1, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="wcConstructorTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="3f797e44-a12c-41c2-b3af-3fbc0d828bf4">
+      <Execution id="323bb440-4525-4842-95e3-b82bd61b3b30" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="wcConstructorTest" />
+      <AspNet webSiteUrl="http://localhost:3088/">
+        <Host pathToWebApp="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="countTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a">
+      <Execution id="63b48098-8142-4468-9e8e-0b85fcc257ac" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="countTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" executionId="323bb440-4525-4842-95e3-b82bd61b3b30" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" executionId="63b48098-8142-4468-9e8e-0b85fcc257ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c30a899f-8147-53dc-4c96-830f00cb71e4" executionId="2fe453c3-5487-4fa0-aeea-821252694ad1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="323bb440-4525-4842-95e3-b82bd61b3b30" testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" testName="wcConstructorTest" computerName="MELCHIOR" duration="00:00:01.3260758" startTime="2012-04-23T10:29:01.7330416-07:00" endTime="2012-04-23T10:29:03.0591174-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="323bb440-4525-4842-95e3-b82bd61b3b30">
+      <Output>
+        <ErrorInfo>
+          <Message>The test adapter 'WebHostAdapter' threw an exception while running test 'wcConstructorTest'. The web site could not be configured correctly; getting ASP.NET process information failed. Requesting 'http://localhost:3088/VSEnterpriseHelper.axd' returned an error: The remote server returned an error: (404) Not Found.
+The remote server returned an error: (404) Not Found.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="63b48098-8142-4468-9e8e-0b85fcc257ac" testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" testName="countTest" computerName="MELCHIOR" duration="00:00:00.1020059" startTime="2012-04-23T10:29:03.2061258-07:00" endTime="2012-04-23T10:29:03.3081317-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63b48098-8142-4468-9e8e-0b85fcc257ac">
+      <Output>
+        <ErrorInfo>
+          <Message>The test adapter 'WebHostAdapter' threw an exception while running test 'countTest'. The web site could not be configured correctly; getting ASP.NET process information failed. Requesting 'http://localhost:3088/VSEnterpriseHelper.axd' returned an error: The remote server returned an error: (404) Not Found.
+The remote server returned an error: (404) Not Found.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2fe453c3-5487-4fa0-aeea-821252694ad1" testId="c30a899f-8147-53dc-4c96-830f00cb71e4" testName="TestMethod1" computerName="MELCHIOR" duration="00:00:00.0247813" startTime="2012-04-23T10:29:03.4731411-07:00" endTime="2012-04-23T10:29:05.0552316-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2fe453c3-5487-4fa0-aeea-821252694ad1">
+    </UnitTestResult>
+  </Results>
+</TestRun>

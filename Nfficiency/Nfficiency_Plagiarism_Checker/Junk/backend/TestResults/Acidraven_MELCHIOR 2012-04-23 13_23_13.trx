@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a2aae097-2b16-4f33-b951-fa6037d6f7cd" name="Acidraven@MELCHIOR 2012-04-23 13:23:13" runUser="Melchior\Acidraven" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0a01271d-960a-4c85-84b9-809b484ebc20">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Acidraven_MELCHIOR 2012-04-23 13_23_13">
+      <DeploymentItem filename="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend\bin\backend.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-23T13:23:13.2670873-07:00" queuing="2012-04-23T13:23:13.5981062-07:00" start="2012-04-23T13:23:13.6081068-07:00" finish="2012-04-23T13:23:14.9111813-07:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="6" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TesterConstructorTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="981e11cc-895b-8c91-590f-daebbe586dd1">
+      <Execution id="d631029f-12eb-4323-9968-af75a6ac8f78" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.TesterTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TesterConstructorTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="runTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="b261faf6-3561-7a26-7823-c74a6c5b33d9">
+      <Execution id="b06aae61-be32-469b-96cb-cb3b6dbedce7" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.TesterTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="runTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="countTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a">
+      <Execution id="a5f7536f-a8f9-4e50-b504-b61cb5113816" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="countTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="wcConstructorTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="3f797e44-a12c-41c2-b3af-3fbc0d828bf4">
+      <Execution id="9bdc94e7-ec71-4b16-b8fe-603f0f7a47e5" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="wcConstructorTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="AIDTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="b2975457-b1a3-d5bc-f47b-8bdc5db6a30b">
+      <Execution id="dfd57535-3d01-40b6-a611-38de47f75932" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.TesterTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AIDTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="TypeTest" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="f9fdfa5b-4658-983a-ef53-b0989fc67803">
+      <Execution id="b0c5ef80-7508-4796-8d9d-2e747e03c6dc" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.TesterTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TypeTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="c:\users\acidraven\desktop\cs430\nfficiency_plagiarism_checker\junk\backend\backendtests\bin\debug\backendtests.dll" id="c30a899f-8147-53dc-4c96-830f00cb71e4">
+      <Execution id="6ef9940d-b26d-4039-b47e-157b2a3cb565" />
+      <TestMethod codeBase="C:/Users/Acidraven/Desktop/CS430/Nfficiency_Plagiarism_Checker/Junk/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.UnitTest1, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" executionId="9bdc94e7-ec71-4b16-b8fe-603f0f7a47e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="981e11cc-895b-8c91-590f-daebbe586dd1" executionId="d631029f-12eb-4323-9968-af75a6ac8f78" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b261faf6-3561-7a26-7823-c74a6c5b33d9" executionId="b06aae61-be32-469b-96cb-cb3b6dbedce7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2975457-b1a3-d5bc-f47b-8bdc5db6a30b" executionId="dfd57535-3d01-40b6-a611-38de47f75932" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" executionId="a5f7536f-a8f9-4e50-b504-b61cb5113816" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c30a899f-8147-53dc-4c96-830f00cb71e4" executionId="6ef9940d-b26d-4039-b47e-157b2a3cb565" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f9fdfa5b-4658-983a-ef53-b0989fc67803" executionId="b0c5ef80-7508-4796-8d9d-2e747e03c6dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9bdc94e7-ec71-4b16-b8fe-603f0f7a47e5" testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" testName="wcConstructorTest" computerName="MELCHIOR" duration="00:00:00.0149950" startTime="2012-04-23T13:23:13.6301080-07:00" endTime="2012-04-23T13:23:14.0371313-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bdc94e7-ec71-4b16-b8fe-603f0f7a47e5">
+    </UnitTestResult>
+    <UnitTestResult executionId="d631029f-12eb-4323-9968-af75a6ac8f78" testId="981e11cc-895b-8c91-590f-daebbe586dd1" testName="TesterConstructorTest" computerName="MELCHIOR" duration="00:00:00.0202295" startTime="2012-04-23T13:23:14.0381314-07:00" endTime="2012-04-23T13:23:14.4071525-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d631029f-12eb-4323-9968-af75a6ac8f78">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Fail failed. Assert.Equals should not be used for Assertions. Please use Assert.AreEqual &amp; overloads instead.</Message>
+          <StackTrace>   at backendTests.TesterTest.TesterConstructorTest() in C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\Junk\backend\backendTests\TesterTest.cs:line 82
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b06aae61-be32-469b-96cb-cb3b6dbedce7" testId="b261faf6-3561-7a26-7823-c74a6c5b33d9" testName="runTest" computerName="MELCHIOR" duration="00:00:00.0015955" startTime="2012-04-23T13:23:14.4081525-07:00" endTime="2012-04-23T13:23:14.4741563-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b06aae61-be32-469b-96cb-cb3b6dbedce7">
+    </UnitTestResult>
+    <UnitTestResult executionId="dfd57535-3d01-40b6-a611-38de47f75932" testId="b2975457-b1a3-d5bc-f47b-8bdc5db6a30b" testName="AIDTest" computerName="MELCHIOR" duration="00:00:00.0003188" startTime="2012-04-23T13:23:14.4761564-07:00" endTime="2012-04-23T13:23:14.5351598-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dfd57535-3d01-40b6-a611-38de47f75932">
+    </UnitTestResult>
+    <UnitTestResult executionId="a5f7536f-a8f9-4e50-b504-b61cb5113816" testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" testName="countTest" computerName="MELCHIOR" duration="00:00:00.0008449" startTime="2012-04-23T13:23:14.5371599-07:00" endTime="2012-04-23T13:23:14.5911630-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5f7536f-a8f9-4e50-b504-b61cb5113816">
+    </UnitTestResult>
+    <UnitTestResult executionId="6ef9940d-b26d-4039-b47e-157b2a3cb565" testId="c30a899f-8147-53dc-4c96-830f00cb71e4" testName="TestMethod1" computerName="MELCHIOR" duration="00:00:00.0137857" startTime="2012-04-23T13:23:14.5931631-07:00" endTime="2012-04-23T13:23:14.8391772-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ef9940d-b26d-4039-b47e-157b2a3cb565">
+    </UnitTestResult>
+    <UnitTestResult executionId="b0c5ef80-7508-4796-8d9d-2e747e03c6dc" testId="f9fdfa5b-4658-983a-ef53-b0989fc67803" testName="TypeTest" computerName="MELCHIOR" duration="00:00:00.0003798" startTime="2012-04-23T13:23:14.8411773-07:00" endTime="2012-04-23T13:23:14.8901801-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0c5ef80-7508-4796-8d9d-2e747e03c6dc">
+    </UnitTestResult>
+  </Results>
+</TestRun>

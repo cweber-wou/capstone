@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="19227205-f0e0-4678-9d99-d2c5fcf7c065" name="Acidraven@MELCHIOR 2012-04-04 12:32:57" runUser="Melchior\Acidraven" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0a01271d-960a-4c85-84b9-809b484ebc20">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Acidraven_MELCHIOR 2012-04-04 12_32_57">
+      <DeploymentItem filename="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend\bin\backend.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-04T12:32:57.3931406-07:00" queuing="2012-04-04T12:32:57.4243407-07:00" start="2012-04-04T12:32:57.4243407-07:00" finish="2012-04-04T12:34:18.0541104-07:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="1" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\acidraven\documents\visual studio 2010\projects\backend\backendtests\bin\debug\backendtests.dll" id="c30a899f-8147-53dc-4c96-830f00cb71e4">
+      <Execution id="46f11d0a-7744-4a33-b30a-65cf881e8aa8" />
+      <TestMethod codeBase="C:/Users/Acidraven/documents/visual studio 2010/Projects/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.UnitTest1, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="wcConstructorTest" storage="c:\users\acidraven\documents\visual studio 2010\projects\backend\backendtests\bin\debug\backendtests.dll" id="3f797e44-a12c-41c2-b3af-3fbc0d828bf4">
+      <Execution id="130c350f-0f80-464e-a2fb-c2b9b53a0c79" />
+      <TestMethod codeBase="C:/Users/Acidraven/documents/visual studio 2010/Projects/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="wcConstructorTest" />
+      <AspNet webSiteUrl="http://localhost:3088/">
+        <Host pathToWebApp="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="countTest" storage="c:\users\acidraven\documents\visual studio 2010\projects\backend\backendtests\bin\debug\backendtests.dll" id="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a">
+      <Execution id="127aab63-428f-44c0-8877-109b4343821b" />
+      <TestMethod codeBase="C:/Users/Acidraven/documents/visual studio 2010/Projects/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="countTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" executionId="130c350f-0f80-464e-a2fb-c2b9b53a0c79" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" executionId="127aab63-428f-44c0-8877-109b4343821b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c30a899f-8147-53dc-4c96-830f00cb71e4" executionId="46f11d0a-7744-4a33-b30a-65cf881e8aa8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="130c350f-0f80-464e-a2fb-c2b9b53a0c79" testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" testName="wcConstructorTest" computerName="MELCHIOR" startTime="2012-04-04T12:32:57.4399407-07:00" endTime="2012-04-04T12:32:57.5803409-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="130c350f-0f80-464e-a2fb-c2b9b53a0c79">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web request 'http://localhost:3088/' completed successfully without running the test. This can occur when configuring the Web application for testing fails (an ASP.NET server error occurs when processing the request), or when no ASP.NET page is executed (the URL may point to an HTML page, a Web service, or a directory listing). Running tests in ASP.NET requires the URL to resolve to an ASP.NET page and for the page to execute properly up to the Load event. The response from the request is stored in the file 'WebRequestResponse_wcConstructorTest.html' with the test results; typically this file can be opened with a Web browser to view its contents.</Message>
+        </ErrorInfo>
+      </Output>
+      <ResultFiles>
+        <ResultFile path="MELCHIOR\WebRequestResponse_wcConstructorTest.html" />
+      </ResultFiles>
+    </UnitTestResult>
+    <UnitTestResult executionId="127aab63-428f-44c0-8877-109b4343821b" testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" testName="countTest" computerName="MELCHIOR" startTime="2012-04-04T12:32:57.5803409-07:00" endTime="2012-04-04T12:34:17.8045100-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="127aab63-428f-44c0-8877-109b4343821b">
+      <Output>
+        <ErrorInfo>
+          <Message>The test started running in response to request 'http://localhost:3088/blank.aspx', but an error occurred before the test finished executing: Unable to connect to the remote server. </Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="46f11d0a-7744-4a33-b30a-65cf881e8aa8" testId="c30a899f-8147-53dc-4c96-830f00cb71e4" testName="TestMethod1" computerName="MELCHIOR" duration="00:00:00.0105691" startTime="2012-04-04T12:34:17.8045100-07:00" endTime="2012-04-04T12:34:18.0385104-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46f11d0a-7744-4a33-b30a-65cf881e8aa8">
+    </UnitTestResult>
+  </Results>
+</TestRun>

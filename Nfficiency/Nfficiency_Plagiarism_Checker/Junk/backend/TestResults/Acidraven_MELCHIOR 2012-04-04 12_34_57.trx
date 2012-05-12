@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="e481fb99-8222-41ee-b5c1-68b0e5989c79" name="Acidraven@MELCHIOR 2012-04-04 12:34:57" runUser="Melchior\Acidraven" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0a01271d-960a-4c85-84b9-809b484ebc20">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Acidraven_MELCHIOR 2012-04-04 12_34_57">
+      <DeploymentItem filename="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend\bin\backend.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-04T12:34:57.2097055-07:00" queuing="2012-04-04T12:34:57.2477076-07:00" start="2012-04-04T12:34:57.2547080-07:00" finish="2012-04-04T12:35:19.7485509-07:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="1" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\acidraven\documents\visual studio 2010\projects\backend\backendtests\bin\debug\backendtests.dll" id="c30a899f-8147-53dc-4c96-830f00cb71e4">
+      <Execution id="d710a573-6387-40b5-a5c3-6c634e66368e" />
+      <TestMethod codeBase="C:/Users/Acidraven/documents/visual studio 2010/Projects/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.UnitTest1, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="wcConstructorTest" storage="c:\users\acidraven\documents\visual studio 2010\projects\backend\backendtests\bin\debug\backendtests.dll" id="3f797e44-a12c-41c2-b3af-3fbc0d828bf4">
+      <Execution id="b9b85c2c-c762-4d96-acbf-c24f54f292af" />
+      <TestMethod codeBase="C:/Users/Acidraven/documents/visual studio 2010/Projects/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="wcConstructorTest" />
+      <AspNet webSiteUrl="http://localhost:3088/">
+        <Host pathToWebApp="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+    <UnitTest name="countTest" storage="c:\users\acidraven\documents\visual studio 2010\projects\backend\backendtests\bin\debug\backendtests.dll" id="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a">
+      <Execution id="1d181570-f2ef-4268-9c38-49786806a845" />
+      <TestMethod codeBase="C:/Users/Acidraven/documents/visual studio 2010/Projects/backend/backendTests/bin/Debug/backendTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="backendTests.wcTest, backendTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="countTest" />
+      <AspNet webSiteUrl="http://localhost:3088/blank.aspx">
+        <Host pathToWebApp="C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backend" webAppRoot="/" />
+      </AspNet>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" executionId="b9b85c2c-c762-4d96-acbf-c24f54f292af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" executionId="1d181570-f2ef-4268-9c38-49786806a845" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c30a899f-8147-53dc-4c96-830f00cb71e4" executionId="d710a573-6387-40b5-a5c3-6c634e66368e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b9b85c2c-c762-4d96-acbf-c24f54f292af" testId="3f797e44-a12c-41c2-b3af-3fbc0d828bf4" testName="wcConstructorTest" computerName="MELCHIOR" startTime="2012-04-04T12:34:57.2587083-07:00" endTime="2012-04-04T12:35:18.4693487-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b9b85c2c-c762-4d96-acbf-c24f54f292af">
+      <Output>
+        <ErrorInfo>
+          <Message>The Web request 'http://localhost:3088/' completed successfully without running the test. This can occur when configuring the Web application for testing fails (an ASP.NET server error occurs when processing the request), or when no ASP.NET page is executed (the URL may point to an HTML page, a Web service, or a directory listing). Running tests in ASP.NET requires the URL to resolve to an ASP.NET page and for the page to execute properly up to the Load event. The response from the request is stored in the file 'WebRequestResponse_wcConstructorTest.html' with the test results; typically this file can be opened with a Web browser to view its contents.</Message>
+        </ErrorInfo>
+      </Output>
+      <ResultFiles>
+        <ResultFile path="MELCHIOR\WebRequestResponse_wcConstructorTest.html" />
+      </ResultFiles>
+    </UnitTestResult>
+    <UnitTestResult executionId="1d181570-f2ef-4268-9c38-49786806a845" testId="bda36fac-1dc4-12c6-70b5-0ea2d9773b0a" testName="countTest" computerName="MELCHIOR" duration="00:00:00.0959535" startTime="2012-04-04T12:35:18.4693487-07:00" endTime="2012-04-04T12:35:19.3273502-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1d181570-f2ef-4268-9c38-49786806a845">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;4&gt;. Actual:&lt;2&gt;. </Message>
+          <StackTrace>   at backendTests.wcTest.countTest() in C:\Users\Acidraven\documents\visual studio 2010\Projects\backend\backendTests\wcTest.cs:line 104
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d710a573-6387-40b5-a5c3-6c634e66368e" testId="c30a899f-8147-53dc-4c96-830f00cb71e4" testName="TestMethod1" computerName="MELCHIOR" duration="00:00:00.0131783" startTime="2012-04-04T12:35:19.3273502-07:00" endTime="2012-04-04T12:35:19.5769506-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d710a573-6387-40b5-a5c3-6c634e66368e">
+    </UnitTestResult>
+  </Results>
+</TestRun>

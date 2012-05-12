@@ -1,0 +1,7 @@
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\bin\Debug\ServiceConfiguration.cscfg
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\obj\Debug\FileUploader_WebRole\bin\Microsoft.WindowsAzure.Diagnostics.dll
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\obj\Debug\FileUploader_WebRole\bin\Microsoft.WindowsAzure.Diagnostics.xml
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\obj\Debug\FileUploader_WebRole\bin\Microsoft.WindowsAzure.StorageClient.dll
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\obj\Debug\FileUploader_WebRole\bin\Microsoft.WindowsAzure.StorageClient.xml
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\obj\Debug\FileUploader_WebRole\bin\RDImageGallery_WebRole.dll
+C:\Users\Acidraven\Desktop\CS430\Nfficiency_Plagiarism_Checker\FileUploaderProject-Frontend integration\RDImageGallery\obj\Debug\FileUploader_WebRole\bin\RDImageGallery_WebRole.pdb
