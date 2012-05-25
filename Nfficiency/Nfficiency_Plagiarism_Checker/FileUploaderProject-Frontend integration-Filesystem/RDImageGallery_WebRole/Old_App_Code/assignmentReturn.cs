@@ -12,115 +12,113 @@
 //    }
 //
 
-
-
 using System;
     using System.Collections.Specialized;
     using System.Configuration;
     using System.Linq;
     using System.Web.UI.WebControls;
-    using Microsoft.WindowsAzure;
-    using Microsoft.WindowsAzure.ServiceRuntime;
-    using Microsoft.WindowsAzure.StorageClient;
-    using Microsoft.WindowsAzure.StorageClient.Protocol;
     using System.ComponentModel;
     using System.IO;
     using System.Windows.Forms;
     using System.Collections.Generic;
 
-namespace RDImageGallery_WebRole.Old_App_Code
+namespace NfficiencyPD.Old_App_Code
 {
     public class assignmentReturn
     {
 
-//Default getAssignmentList
-//Takes no paramiters, uses default container "gallery"
         public LinkedList<Paper> getAssignmentList()
-        {
-            LinkedList<Paper> AssignmentsList = new LinkedList<Paper>();
-
-            CloudBlobContainer blobContainer = null;
-            CloudStorageAccount storageAccount = null;
-            CloudBlobClient blobClient = null;
-
-            storageAccount = CloudStorageAccount.FromConfigurationSetting("DataConnectionString");
-            blobClient = storageAccount.CreateCloudBlobClient();
-
-            blobContainer = blobClient.GetContainerReference("gallery"); //Gets the blobe storage
-            var blobs = blobContainer.ListBlobs(); //Gets the entire list of Blob items
-            var blobList = new List<string>();
-            foreach (var blob in blobs)
-            {
-                Paper newPaper = new Paper();
-                var srcBlob = blobContainer.GetBlobReference(blob.Uri.ToString()); //Gets each blobs Uri
-                srcBlob.FetchAttributes();
-                //txtTest.Text = srcBlob.DownloadText();
-                blobList.Add(blob.Uri.ToString());
-
-                String fileDL = srcBlob.DownloadText();
-                LinkedList<String> dataList = new LinkedList<string>();
-                //string[] lines = fileDL.Split(new string[] { Environment.NewLine }, StringSplitOptions.None); //Splits file up by '\n'
-                string[] lines = fileDL.Split(new string[] { Environment.NewLine }, StringSplitOptions.None); //Splits file up by '\n'
-                for (int i = 0; i < lines.Length; i++)
-                    dataList.AddLast(lines[i].ToString());
-                newPaper.Data = dataList;
-                newPaper.Link = srcBlob.Metadata.Get("LinkID");
-                newPaper.AID = srcBlob.Metadata.Get("AssignID");
-                newPaper.UserID = srcBlob.Metadata.Get("UserID");
-                newPaper.FileName = srcBlob.Metadata.Get("FileName");
-
-                AssignmentsList.AddFirst(newPaper);
-            }
-            //lblInfo.Text = (AssignmentsList.Count().ToString());
-            //RefreshGallery();
-
-            return AssignmentsList;
+        { LinkedList<Paper> emptyPapers = new LinkedList<Paper>();
+        return emptyPapers;
         }
 
-
-        //Default getAssignmentList
-        //Takes container as paramiter, container in aGUID, connection string = "DataConnectionString 
-        public LinkedList<Paper> getAssignmentList(string container)
+        //****************************************************************************
+        //
+        // Default getAssignmentList
+        // Takes aGUID as paramiter
+        // Uses returnAGuidPath(inAGuid) to locate the full path to the assignment
+        // Uses pathToPapers(aGUID) to get all the submitted assignments   
+        // Loads the Paper object data LL with a parsed LL of Strings
+        // Returns the LL of Paper obj.
+        //
+        //****************************************************************************
+        public LinkedList<Paper> getAssignmentList(string inAGuid)
         {
+            string path = string.Empty;
+            LinkedList<Paper> files = new LinkedList<Paper>();
 
-            LinkedList<Paper> AssignmentsList = new LinkedList<Paper>();
+            path = returnAGuidPath(inAGuid); // Gets the path of the aGUID
 
-            CloudBlobContainer blobContainer = null;
-            CloudStorageAccount storageAccount = null;
-            CloudBlobClient blobClient = null;
-
-            storageAccount = CloudStorageAccount.FromConfigurationSetting("DataConnectionString");
-            blobClient = storageAccount.CreateCloudBlobClient();
-
-            blobContainer = blobClient.GetContainerReference(container.ToString()); //Gets the blobe storage
-            var blobs = blobContainer.ListBlobs(); //Gets the entire list of Blob items
-            var blobList = new List<string>();
-            foreach (var blob in blobs)
+            files = pathToPapers(path.ToString(), inAGuid.ToString()); // Returns LL<Papers>
+            foreach (Paper p in files)
             {
-                Paper newPaper = new Paper();
-                var srcBlob = blobContainer.GetBlobReference(blob.Uri.ToString()); //Gets each blobs Uri
-                srcBlob.FetchAttributes();
-                //txtTest.Text = srcBlob.DownloadText();
-                blobList.Add(blob.Uri.ToString());
-
-                String fileDL = srcBlob.DownloadText();
-                LinkedList<String> dataList = new LinkedList<string>();
-                //string[] lines = fileDL.Split(new string[] { Environment.NewLine }, StringSplitOptions.None); //Splits file up by '\n'
-                string[] lines = fileDL.Split(new string[] { Environment.NewLine }, StringSplitOptions.None); //Splits file up by '\n'
+                p.Data = new LinkedList<string>();
+                string fileString = File.ReadAllText(p.Link); //gets the file as a byte[] by the file's link
+                string[] lines = fileString.Split(new string[] { Environment.NewLine }, StringSplitOptions.None); //Splits file up by '\n'
                 for (int i = 0; i < lines.Length; i++)
-                    dataList.AddLast(lines[i].ToString());
-                newPaper.Data = dataList;
-                newPaper.Link = srcBlob.Metadata.Get("LinkID");
-                newPaper.AID = srcBlob.Metadata.Get("AssignID");
-                newPaper.UserID = srcBlob.Metadata.Get("UserID");
-                newPaper.FileName = srcBlob.Metadata.Get("FileName");
+                    p.Data.AddLast(lines[i].ToString());
 
-                AssignmentsList.AddFirst(newPaper);
             }
-            return AssignmentsList;
+            return files;
+
         }
 
+        //****************************************************************************
+        //
+        //Converts to LL of papers
+        //Returns LL<papers>
+        //Don't want to pull in data here due to overhead
+        //
+        //****************************************************************************
+        public LinkedList<Paper> pathToPapers(string path, string aGUID)
+        {
+            LinkedList<string> allFiles = new LinkedList<string>();
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
+            foreach (System.IO.FileInfo f in dir.GetFiles("*.*"))
+            {
+                allFiles.AddFirst(f.Name);
+            }
+            LinkedList<Paper> allPapers = new LinkedList<Paper>();
+            foreach (string p in allFiles)
+            {
+                Paper paper = new Paper();
+                paper.AID = aGUID.ToString();
+                string fullPath = Path.Combine(path, p);
+                paper.Link = fullPath.ToString();
+                string truUserID = Path.GetFileNameWithoutExtension(p);//parsed filename without extension
+                paper.UserID = truUserID.ToString();
 
-    }
+                paper.FileName = p.ToString();
+                allPapers.AddFirst(paper);
+            }
+            return allPapers;
+        }
 
-    }
+        //****************************************************************************
+        //
+        // Takes aGUID as a paramiter
+        // Gets the default directory ##NEED getActiveDir method to get universal path
+        // Searches the default directory and subdirectories for the aGUID directory
+        // Returns the path of the aGUID
+        //
+        //****************************************************************************
+        public string returnAGuidPath(string inAGUID)
+        {
+            string pathOfAGUID = string.Empty;
+            string activeDir = Path.GetPathRoot(Directory.GetCurrentDirectory());
+            activeDir = Path.Combine(activeDir, "FileRepository");
+            string[] files = Directory.GetDirectories(activeDir, inAGUID, SearchOption.AllDirectories); //Gets the directory starting at activeDir, and searches for inAGUID
+
+            try
+            {
+                pathOfAGUID = files[0].ToString();
+            }
+            catch (Exception)
+            {
+                pathOfAGUID = "File Not Found: getCourseID_AGUID(string inAGUID)";
+
+            }
+            return pathOfAGUID;
+        }
+    }//End Class
+}//End Name Space

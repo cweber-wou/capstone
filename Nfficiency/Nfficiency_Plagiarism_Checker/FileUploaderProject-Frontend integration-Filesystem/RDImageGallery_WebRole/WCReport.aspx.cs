@@ -12,7 +12,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
-using RDImageGallery_WebRole.Old_App_Code;
+using NfficiencyPD.Old_App_Code;
 
 public partial class Main : System.Web.UI.Page
 {
@@ -47,9 +47,7 @@ public partial class Main : System.Web.UI.Page
     //NEED to open file using GUID
     protected void LinkLabel_Click(object sender, EventArgs e)
     {
-        CloudBlobContainer blobContainer = null;
-        CloudStorageAccount storageAccount = null;
-        CloudBlobClient blobClient = null;
+       
 
         LinkButton btn = (LinkButton)(sender);
         string yourValue = btn.CommandArgument;

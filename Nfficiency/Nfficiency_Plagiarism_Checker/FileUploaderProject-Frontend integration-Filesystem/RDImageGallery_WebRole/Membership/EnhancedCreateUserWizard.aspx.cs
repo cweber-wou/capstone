@@ -26,7 +26,7 @@ public partial class Membership_EnhancedCreateUserWizard : System.Web.UI.Page
         Guid newUserId = (Guid)newUser.ProviderUserKey;
 
         // Insert a new record into UserProfiles
-        string connectionString = ConfigurationManager.ConnectionStrings["SecurityTutorialsConnectionString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["Nfficiency_SecurityConnectionString"].ConnectionString;
         string insertSql = "INSERT INTO UserProfiles(UserId, HomeTown, HomepageUrl, Signature) VALUES(@UserId, @HomeTown, @HomepageUrl, @Signature)";
 
         using (SqlConnection myConnection = new SqlConnection(connectionString))
@@ -65,7 +65,7 @@ public partial class Membership_EnhancedCreateUserWizard : System.Web.UI.Page
             Guid newUserId = (Guid)newUser.ProviderUserKey;
 
             // Insert a new record into UserProfiles
-            string connectionString = ConfigurationManager.ConnectionStrings["SecurityTutorialsConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Nfficiency_SecurityConnectionString"].ConnectionString;
             string updateSql = "UPDATE UserProfiles SET HomeTown = @HomeTown, HomepageUrl = @HomepageUrl, Signature = @Signature WHERE UserId = @UserId";
 
             using (SqlConnection myConnection = new SqlConnection(connectionString))

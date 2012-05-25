@@ -12,24 +12,6 @@
 public partial class OrderPage {
     
     /// <summary>
-    /// Head1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-    
-    /// <summary>
-    /// form1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-    
-    /// <summary>
     /// SqlDataSource1 control.
     /// </summary>
     /// <remarks>
@@ -84,6 +66,33 @@ public partial class OrderPage {
     protected global::System.Web.UI.WebControls.ListBox lstCart;
     
     /// <summary>
+    /// txtDescription control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtDescription;
+    
+    /// <summary>
+    /// RequiredFieldValidator1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+    
+    /// <summary>
+    /// lstNewCart control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ListBox lstNewCart;
+    
+    /// <summary>
     /// btnAdd control.
     /// </summary>
     /// <remarks>
@@ -91,15 +100,6 @@ public partial class OrderPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button btnAdd;
-    
-    /// <summary>
-    /// ddNumAssign control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList ddNumAssign;
     
     /// <summary>
     /// btn_AddAssignment control.

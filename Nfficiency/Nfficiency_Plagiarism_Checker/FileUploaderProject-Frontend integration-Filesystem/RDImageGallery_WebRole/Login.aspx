@@ -1,8 +1,7 @@
 <%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" Inherits="Login" Codebehind="Login.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <h1>
-        Login</h1>
+    <h1>Login</h1>
     <p>
         <asp:Login ID="myLogin" runat="server" 
             CreateUserText="Not registered yet? Create an account!" 

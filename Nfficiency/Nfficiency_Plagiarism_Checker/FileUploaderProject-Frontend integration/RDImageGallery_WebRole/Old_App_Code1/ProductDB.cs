@@ -10,7 +10,7 @@ using System;
     {
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-            public static List<Product> GetProduct()
+        public static List<Product> GetProduct()
         {
             List<Product> productList = new List<Product>();
             SqlConnection con = new SqlConnection(GetConnectionString());
@@ -24,9 +24,38 @@ using System;
             while (dr.Read())
             {
                 product = new Product();
-                product.aGUID= dr["aGUID"].ToString();
+                product.aGUID = dr["aGUID"].ToString();
                 product.Course_id = dr["Course_ID"].ToString();
                 product.assignmentNumber = dr["Assignment_ID"].ToString();
+                product.descripton = dr["Description"].ToString();
+                productList.Add(product);
+            }
+            dr.Close();
+            return productList;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static List<Product> GetProductCID(string inCID)
+        {
+            List<Product> productList = new List<Product>();
+            SqlConnection con = new SqlConnection(GetConnectionString());
+            string sel = "SELECT aGUID, Course_ID, Assignment_ID, Description "
+                + "FROM Assignments "
+                + "WHERE Course_ID = @inCID "
+                + "ORDER BY Course_ID desc";
+            SqlCommand cmd = new SqlCommand(sel, con);
+            cmd.Parameters.AddWithValue("inCID", inCID);
+            con.Open();
+            SqlDataReader dr =
+                cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            Product product;
+            while (dr.Read())
+            {
+                product = new Product();
+                product.aGUID = dr["aGUID"].ToString();
+                product.Course_id = dr["Course_ID"].ToString();
+                product.assignmentNumber = dr["Assignment_ID"].ToString();
+                product.descripton = dr["Description"].ToString();
                 productList.Add(product);
             }
             dr.Close();
@@ -45,13 +74,14 @@ using System;
         {
             SqlConnection con = new SqlConnection(GetConnectionString());
             string ins = "INSERT INTO Assignments"
-                + " (aGUID, Course_ID, Assignment_ID) "
-                + " VALUES( @aGUID, @Course_ID, @Assignment_ID)";
+                + " (aGUID, Course_ID, Assignment_ID, Description) "
+                + " VALUES( @aGUID, @Course_ID, @Assignment_ID, @Description)";
             SqlCommand cmd = new SqlCommand(ins, con);
-                 
+
             cmd.Parameters.AddWithValue("aGUID", product.aGUID);
             cmd.Parameters.AddWithValue("Course_ID", product.Course_id);
             cmd.Parameters.AddWithValue("Assignment_ID", product.assignmentNumber);
+            cmd.Parameters.AddWithValue("Description", product.descripton);
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
@@ -66,11 +96,12 @@ using System;
             SqlConnection con = new SqlConnection(GetConnectionString());
             string del = "DELETE FROM Assignments "
                 + "WHERE aGUID = @aGUID";
-               
+
             SqlCommand cmd = new SqlCommand(del, con);
-            cmd.Parameters.AddWithValue("aGUID",product.aGUID);
+            cmd.Parameters.AddWithValue("aGUID", product.aGUID);
             cmd.Parameters.AddWithValue("Course_ID", product.Course_id);
             cmd.Parameters.AddWithValue("Assignment_ID", product.assignmentNumber);
+            cmd.Parameters.AddWithValue("Description", product.descripton);
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
@@ -86,15 +117,16 @@ using System;
                 + "SET aGUID = @, "
                 + "WHERE aGUID = @original_aGUID ";
             SqlCommand cmd = new SqlCommand(up, con);
-            
+
             cmd.Parameters.AddWithValue("aGUID", product.aGUID);
             cmd.Parameters.AddWithValue("Course_ID", product.Course_id);
             cmd.Parameters.AddWithValue("Assignment_ID", product.assignmentNumber);
-           
+            cmd.Parameters.AddWithValue("Description", product.descripton);
+
             cmd.Parameters.AddWithValue("origional_aGUID", original_Product.aGUID);
             cmd.Parameters.AddWithValue("original_Course_ID", original_Product.Course_id);
             cmd.Parameters.AddWithValue("original_Assignment_ID", original_Product.assignmentNumber);
-
+            cmd.Parameters.AddWithValue("original_Description", original_Product.descripton);
             con.Open();
             int updateCount = cmd.ExecuteNonQuery();
             con.Close();

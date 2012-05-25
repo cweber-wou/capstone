@@ -1,11 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dynamicBlob.aspx.cs" Inherits="RDImageGallery_WebRole.dynamicBlob" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"AutoEventWireup="true" CodeBehind="dynamicBlob.aspx.cs" Inherits="RDImageGallery_WebRole.dynamicBlob" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head id="Head1" runat="server">
-    <title>Windows Azure Blob Service</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style type="text/css">
         body { font-family: Verdana; font-size: 12px; }
         h1 { font-size:x-large; font-weight:bold; }
@@ -17,36 +14,121 @@
         .form { width:50em; }
         .form li span {width:30%; float:left; font-weight:bold; }
         .form li input { width:70%; float:left; }
-        .form input { float:right; }
+        .form input { float:right;
+          margin-left: 6px;
+      }
         
         .item { font-size:smaller; font-weight:bold; }
         .item ul li { padding:0.25em; background-color:#ffeecc; }
         .item ul li span { padding:0.25em; background-color:#ffffff; display:block; font-style:italic; font-weight:normal; }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+
+<script type="text/javascript" language="javascript">
+
+    function AddNewRow() {
+
+        var rownum = 1;
+
+        var div = document.createElement("div")
+
+        var divid = "dv" + rownum
+
+        div.setAttribute("ID", divid)
+
+        rownum++
+
+        var lbl = document.createElement("label")
+
+        lbl.setAttribute("ID", "lbl" + rownum)
+
+        lbl.setAttribute("class", "label1")
+
+        lbl.innerHTML = "File: "
+
+        rownum++
+
+        var _upload = document.createElement("input")
+
+        _upload.setAttribute("type", "file")
+
+        _upload.setAttribute("ID", "upload" + rownum)
+
+        _upload.setAttribute("runat", "server")
+
+        _upload.setAttribute("name", "uploads" + rownum)
+
+        rownum++
+
+        var hyp = document.createElement("a")
+
+        hyp.setAttribute("style", "cursor:Pointer")
+
+        hyp.setAttribute("onclick", "return RemoveDv('" + divid + "');");
+
+        hyp.innerHTML = "Remove"
+
+        rownum++
+
+        var br = document.createElement("br")
+
+        var _pdiv = document.getElementById("Parent")
+
+        div.appendChild(br)
+
+        div.appendChild(lbl)
+
+        div.appendChild(_upload)
+
+        div.appendChild(hyp)
+
+        _pdiv.appendChild(div)
+
+    }
+
+    function RemoveDv(obj) {
+
+        var p = document.getElementById("Parent")
+
+        var chld = document.getElementById(obj)
+
+        p.removeChild(chld)
+
+    }
+
+</script>
+
+
+
+    
     <div>
-        <h1>File Uploader (Azure Blob)</h1>
+        <h1>
+            <asp:Label ID="lblCourse_Name" runat="server" Text="Label"></asp:Label>
+&nbsp;Course Home</h1>
         <div class="form">
-            <ul>
-                
-                <li><span>True Assignment ID:</span><asp:TextBox ID="txtAssignID" runat="server"/></li>
-               
-                 <li><span>True File Link:</span><asp:TextBox ID="txtFileLink" runat="server"/></li>
-               
-                <li><span>True User ID:</span><asp:TextBox ID="txtUserID" runat="server"/></li>
-                <li><span>Filename: </span><asp:FileUpload ID="txtFileName" runat="server" /></li>
-                 <li><span>Container: </span></li>
-                 <li><span>Blob: </span></li>
-            </ul>
-            <asp:Button ID="btnProcess" runat="server" onclick="btnProcess_Click" 
-                Text="Process File" Width="97px" />
-            <asp:Button ID="upload" runat="server" onclick="upload_Click" 
-                Text="Upload File" />
+          
             <br />
             <asp:Label ID="lblCourse_ID" runat="server" Text="Label" Visible="False"></asp:Label>
+            <asp:Button ID="btnWordList" runat="server" onclick="btnWordList_Click" 
+                Text="Word List" Width="97px" />
+                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" 
+                ConfirmText="Continue?" Enabled="True" TargetControlID="btnWordList">
+            </asp:ConfirmButtonExtender>
+           
+          
+            <asp:Button ID="btnProcess" runat="server" onclick="btnProcess_Click" 
+                Text="WC" Width="97px" />
+                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender1" runat="server" 
+                ConfirmText="Continue?" Enabled="True" TargetControlID="btnProcess">
+            </asp:ConfirmButtonExtender>
+            
+
+            <asp:Button ID="Button1" runat="server" onclick="btnKeyWC_Click" Text="Key WC" 
+                Width="97px" />
+                <asp:ConfirmButtonExtender ID="Button1_ConfirmButtonExtender" runat="server" 
+                ConfirmText="Continue?" Enabled="True" TargetControlID="Button1">
+            </asp:ConfirmButtonExtender>
             <br />
+
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:justin_dbConnectionString %>" 
                 SelectCommand="SELECT * FROM [Assignments] WHERE ([Course_ID] = @Course_ID)">
@@ -55,7 +137,14 @@
                         PropertyName="Text" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            <br />
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:justin_dbConnectionString %>" 
+                SelectCommand="SELECT [Course_Name] FROM [Courses] WHERE ([Course_ID] = @Course_ID)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="lblCourse_ID" Name="Course_ID" 
+                        PropertyName="Text" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             <br />
         </div>
         <div style=" float:left;">
@@ -63,10 +152,12 @@
         </div>
         <br />
         <br />
-        <asp:Label ID="lblInfo" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="lblInfo" runat="server" Text="Text output of file"></asp:Label>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
         <asp:TextBox ID="txtTest" runat="server" TextMode="MultiLine" Width="996px"></asp:TextBox>
         <br />
-        <asp:Label ID="lblInfo1" runat="server" Text="Label_Info1"></asp:Label>
+        <asp:Label ID="lblInfo1" runat="server" Text="aGUID Check"></asp:Label>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="aGUID" DataSourceID="SqlDataSource1" EnableModelValidation="True" 
             onselectedindexchanged="GridView1_SelectedIndexChanged">
@@ -80,6 +171,34 @@
                     SortExpression="Course_ID" />
             </Columns>
         </asp:GridView>
+
+
+        <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Size="Large" 
+            Text="Add Custom Word List:"></asp:Label>
+        <br />
+
+
+        <table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr id="Tr1" runat="Server">
+<td>
+<label>
+File :</label><asp:FileUpload ID="uploadFile1" runat="server" CssClass="" /><br />
+<div id="Parent">
+</div>
+<label>
+&nbsp;</label>
+<input type="button" onclick="AddNewRow(); return false;"  value="Add File" />&nbsp;
+<asp:Button ID="btnAddFile" Text="Commit File" runat="server"
+onclick="btnAddFile_Click1" CausesValidation="False" />&nbsp;
+<asp:Button ID="btnCancel" Text="Cancel" runat="server" />
+</td></tr></table>
+
+
+        <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Size="Large" 
+            Text="Turned in files"></asp:Label>
+        <br />
+
+
         <asp:ListView ID="images" runat="server" onitemdatabound="OnBlobDataBound" 
             onselectedindexchanged="images_SelectedIndexChanged">
             <LayoutTemplate>
@@ -91,43 +210,60 @@
             <ItemTemplate>            
                 <div class="item">
                     <ul style="width:40em;float:left;clear:left" >
+                   
                         <asp:Repeater ID="blobMetadata" runat="server">
                         <ItemTemplate>
-                            <li><%# Eval("Name") %><span><%# Eval("Value") %></span></li>
-                        </ItemTemplate>
-                        </asp:Repeater>
+                            <li><asp:Label ID="Label2" runat="server" Text="AID: " ></asp:Label><%# Eval("AID") %>
+                            <span><asp:Label ID="Label1" runat="server" Text="User ID: " ></asp:Label><%# Eval("UserID") %>
+                            <span><asp:Label ID="Label3" runat="server" Text="File Name: " ></asp:Label><%# Eval("txtFileName") %>
+                            <span><asp:Label ID="Label4" runat="server" Text="Link: " ></asp:Label><%# Eval("Link") %></span></li>
+                        
                         <li>
-                            <asp:LinkButton ID="deleteBlob" 
+                            <asp:LinkButton ID="deleteFile" 
                                     OnClientClick="return confirm('Delete file?');"
                                     CommandName="Delete" 
-                                    CommandArgument='<%# Eval("Uri")%>'
-                                    runat="server" Text="Delete" oncommand="OnDeleteImage" />
+                                    CommandArgument='<%# Eval("AID")%>'
+                                    runat="server" Text="Delete" oncommand="OnDeleteFile" />
 
-                            <asp:LinkButton ID="CopyBlob" 
+                            <asp:LinkButton ID="CopyFile" 
                                     OnClientClick="return confirm('Copy file?');"
                                     CommandName="Copy" 
-                                    CommandArgument='<%# Eval("Uri")%>'
-                                    runat="server" Text="Copy" oncommand="OnCopyImage" />
+                                    CommandArgument='<%# Eval("AID")%>'
+                                    runat="server" Text="Copy" oncommand="OnCopyFile" />
 
-                            <asp:LinkButton ID="SnapshotBlob" 
+                            <asp:LinkButton ID="SnapshotFile" 
                                     OnClientClick="return confirm('Snapshot file?');"
                                     CommandName="Snapshot" 
-                                    CommandArgument='<%# Eval("Uri")%>'
-                                    runat="server" Text="Snapshot" oncommand="OnSnapshotImage" />
+                                    CommandArgument='<%# Eval("AID")%>'
+                                    runat="server" Text="Snapshot" oncommand="OnSnapshotFile" />
 
-<%--Adding Download button --%>
- <asp:LinkButton ID="DownloadBlob" 
+                                    <asp:LinkButton ID="DownloadFile" 
                                     OnClientClick="return confirm('Download file?');"
                                     CommandName="Download" 
-                                    CommandArgument='<%# Eval("Uri")%>'
-                                    runat="server" Text="Download" oncommand="OnDownloadImage" />
+                                    CommandArgument='<%# Eval("AID")%>'
+                                    runat="server" Text="Download" oncommand="OnDownloadFile" />
                         </li>
+                        </ItemTemplate>
+                        </asp:Repeater>
                     </ul>
-                    <img src="<%# Eval("Uri") %>" alt="<%# Eval("Uri") %>" style="float:left"/>
+                    
+                
                 </div>
             </ItemTemplate>
         </asp:ListView>
     </div>
-    </form>
-</body>
-</html>
+    
+
+
+
+ 
+
+
+
+
+
+
+   
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="LoginContent" runat="server">
+</asp:Content>

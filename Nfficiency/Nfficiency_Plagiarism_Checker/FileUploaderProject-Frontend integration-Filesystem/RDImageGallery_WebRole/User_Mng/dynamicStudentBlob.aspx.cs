@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-namespace RDImageGallery_WebRole.Course
+
+namespace NfficiencyPD.Course
 {
     using System;
     using System.Collections.Specialized;
@@ -69,31 +70,13 @@ namespace RDImageGallery_WebRole.Course
             ViewState.Add("arrayListInViewState", PageArrayList);
         }
 
-        //Uses the 'this' refference set using GetContainer(aGUID)
-        protected void upload_Click(object sender, EventArgs e)
-        {
-            if (User_ID != null)
-            {
-                status.Text = "Inserted [" + txtFileName.FileName + "] - Content Type [" + txtFileName.PostedFile.ContentType + "] - Length [" + txtFileName.PostedFile.ContentLength + "]";
-                SaveImage(
-                Guid.NewGuid().ToString(), lblInfo1.Text,
-                txtAssignID.Text,
-                txtFileLink.Text,
-                txtUserID.Text,
-                txtFileName.FileName,
-                txtFileName.PostedFile.ContentType,
-                txtFileName.FileBytes
-              );
-                RefreshGallery();
-            }
-            else
-                status.Text = "No image file";
-        }
+      
+        protected void upload_Click(object sender, EventArgs e)    {    }
 
 
         // Cast out blob instance and bind it's metadata to metadata repeater
         // the "this" needs to be set using GetContainer(aGUID)  
-        protected void OnBlobDataBound(object sender, ListViewItemEventArgs e)
+        protected void OnDataBound(object sender, ListViewItemEventArgs e)
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)
             {
@@ -274,29 +257,13 @@ namespace RDImageGallery_WebRole.Course
             });
             images.DataBind();
         }
+     
+            
+            
+         
+         
 
-        protected void SaveImage(string id, string container_AID, string userID_blob, string description, string tags, string fileName, string contentType, byte[] data)
-        {
-            userID_blob = User.Identity.Name;
-
-            // Create a blob in container and upload image bytes to it
-            var blob = this.GetContainer(container_AID).GetBlobReference(userID_blob);
-
-            blob.Properties.ContentType = contentType;
-
-            // Create some metadata for this image
-            var metadata = new NameValueCollection();
-            metadata["LinkId"] = id;
-            metadata["Filename"] = fileName;
-            metadata["AssignID"] = String.IsNullOrEmpty(userID_blob) ? "unknown" : userID_blob;
-            metadata["Description"] = String.IsNullOrEmpty(description) ? "unknown" : description; //Extra Field
-            metadata["UserID"] = String.IsNullOrEmpty(tags) ? "unknown" : tags;
-
-            // Add and commit metadata to blob
-            blob.Metadata.Add(metadata);
-            blob.UploadByteArray(data);
-
-        }
+       
 
         protected void images_SelectedIndexChanged(object sender, EventArgs e)
         {

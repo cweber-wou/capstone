@@ -1,18 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmUsrMngr.aspx.cs" Inherits="CS430_ASPNET_Role_Records.frmUsrMngr" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmUsrMngr.aspx.cs" Inherits="CS430_ASPNET_Role_Records.frmUsrMngr" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title>Course Selection</title>
-    <link href="../Main.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <form id="form1" runat="server">
+
+    
     <div id="page">
-        <div id="header">
-            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
-            </asp:TreeView>
+        
             <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
             <br />
         </div>
@@ -95,7 +88,10 @@
             </asp:DetailsView>
 
         </div>
-    </div>
-    </form>
-</body>
-</html>
+   
+  
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="LoginContent" runat="server">
+</asp:Content>
+

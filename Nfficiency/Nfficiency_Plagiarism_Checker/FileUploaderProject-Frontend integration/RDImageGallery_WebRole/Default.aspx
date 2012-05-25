@@ -1,7 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" Inherits="_Default" Title="Untitled Page" Codebehind="Default.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-
+<br />
     <asp:Panel runat="server" ID="AuthenticatedMessagePanel">
+        <br />
+        <br />
+         <h1>Default Page</h1>
         <asp:Label runat="server" ID="WelcomeBackMessage"></asp:Label>
         <p>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 

@@ -38,7 +38,7 @@ namespace CS430_ASPNET_Role_Records.User_Mng
             eCourse_Name = (row.Cells[2].Text); //Gets the eCourse_Name of the selected item and stores in variable
             lblInfo2.Text = eCourse_Name;
             // Selects the Course_EnrollmentKey from courses by matching the Course_ID
-            string connectionString = ConfigurationManager.ConnectionStrings["justin_dbConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Nfficiency_dbConnectionString"].ConnectionString;
             string selectSql = "Select Course_EnrollmentKey From Courses Where Course_ID = @courseID";
             lblInfo.Text = selectSql.ToString();
             using (SqlConnection myConnection = new SqlConnection(connectionString))
@@ -57,7 +57,7 @@ namespace CS430_ASPNET_Role_Records.User_Mng
             }
             Response.Redirect("frmEnrollUserVarification.aspx?id=" + Course_ID); 
                 // Insert a new record into UserProfiles
-                // string connectionString = ConfigurationManager.ConnectionStrings["SecurityTutorialsConnectionString"].ConnectionString;
+                // string connectionString = ConfigurationManager.ConnectionStrings["Nfficiency_SecurityConnectionString"].ConnectionString;
                 // string insertSql = "INSERT INTO UserProfiles(UserId, HomeTown, HomepageUrl, Signature) VALUES(@UserId, @HomeTown, @HomepageUrl, @Signature)";
 
                 //  using (SqlConnection myConnection = new SqlConnection(connectionString))

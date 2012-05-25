@@ -12,8 +12,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-
-namespace RDImageGallery_WebRole.Old_App_Code
+namespace NfficiencyPD.Old_App_Code
 {
     public class Tester
     {

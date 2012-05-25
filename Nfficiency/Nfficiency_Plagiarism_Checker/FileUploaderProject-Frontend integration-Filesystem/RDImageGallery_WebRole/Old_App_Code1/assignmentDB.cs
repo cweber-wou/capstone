@@ -9,9 +9,9 @@ using System;
     public class assignmentDB
     {
      [DataObjectMethod(DataObjectMethodType.Select)]
-     public static List<Product> GetCourses()
+     public static List<AssignmentClass> GetCourses()
     {
-        List<Product> productList = new List<Product>();
+        List<AssignmentClass> productList = new List<AssignmentClass>();
         SqlConnection con = new SqlConnection(GetConnectionString());
         string sel = "SELECT Course_ID, Course_Name, Course_Description, Course_EnrollmentKey, Course_Owner "
             + "FROM Courses ORDER BY Course_ID desc";
@@ -19,10 +19,10 @@ using System;
         con.Open();
         SqlDataReader dr = 
             cmd.ExecuteReader(CommandBehavior.CloseConnection);
-        Product productClass;
+        AssignmentClass productClass;
         while (dr.Read())
         {
-            productClass = new Product();
+            productClass = new AssignmentClass();
             productClass.aGUID = dr["aGUID"].ToString();
             productClass.Course_id = dr["Course_id"].ToString();
             productClass.assignmentNumber = dr["assignmentNumber"].ToString();
@@ -79,7 +79,7 @@ using System;
     private static string GetConnectionString()
     {
         return ConfigurationManager.ConnectionStrings
-            ["justin_dbConnectionString"].ConnectionString;
+            ["Nfficiency_dbConnectionString"].ConnectionString;
     }
 
     [DataObjectMethod(DataObjectMethodType.Insert)]

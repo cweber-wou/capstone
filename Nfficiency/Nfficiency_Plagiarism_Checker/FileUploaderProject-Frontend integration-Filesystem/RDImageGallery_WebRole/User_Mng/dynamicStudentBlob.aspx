@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dynamicStudentBlob.aspx.cs" Inherits="RDImageGallery_WebRole.Course.dynamicStudentBlob" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dynamicStudentBlob.aspx.cs" Inherits="NfficiencyPD.Course.dynamicStudentBlob" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title>Windows Azure Blob Service</title>
+    <title>Plagerism Detection</title>
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <style type="text/css">
         body { font-family: Verdana; font-size: 12px; }
@@ -27,7 +27,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h1>File Student Uploader (Azure Blob)</h1>
+        <h1>Course Home</h1>
         <div class="form">
             <ul>
                 
@@ -47,7 +47,7 @@
             <asp:Label ID="lblCourse_ID" runat="server" Text="Label" Visible="False"></asp:Label>
             <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:justin_dbConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:Nfficiency_dbConnectionString %>" 
                 SelectCommand="SELECT * FROM [Assignments] WHERE ([Course_ID] = @Course_ID)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="lblCourse_ID" Name="Course_ID" 

@@ -70,7 +70,7 @@
                
             </asp:ObjectDataSource>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:justin_dbConnectionString %>" 
+                ConnectionString="<%$ ConnectionStrings:Nfficiency_dbConnectionString %>" 
                 DeleteCommand="DELETE FROM [Customers] WHERE [Customer_id] = @Customer_id" 
                 InsertCommand="INSERT INTO [Customers] ([first_name], [last_name], [street], [city], [state], [zip]) VALUES (@first_name, @last_name, @street, @city, @state, @zip)" 
                 SelectCommand="SELECT * FROM [Customers] WHERE ([last_name] like @last_name)" 

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RDImageGallery_WebRole {
+namespace NfficiencyPD {
     
     
     public partial class WebForm1 {

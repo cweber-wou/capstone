@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.IO;
 
-namespace RDImageGallery_WebRole.Old_App_Code1
+namespace NfficiencyPD.Old_App_Code1
 {
     public class CreateFileOrFolder
     {

@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" Inherits="Roles_RoleBasedAuthorization" Title="Untitled Page" Codebehind="RoleBasedAuthorization.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <h3>Role-Based Authorization Demo</h3>
+    <h3>Role-Based Authorization</h3>
     <p>
         <asp:LoginView ID="LoginView1" runat="server">
             <RoleGroups>

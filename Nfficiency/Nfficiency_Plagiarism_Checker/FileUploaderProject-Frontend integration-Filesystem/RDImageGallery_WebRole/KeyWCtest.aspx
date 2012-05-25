@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="KeyWCtest.aspx.cs" Inherits="RDImageGallery_WebRole.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="KeyWCtest.aspx.cs" Inherits="NfficiencyPD.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        DataObjectTypeName="RDImageGallery_WebRole.Old_App_Code.KeyWcData" 
+        DataObjectTypeName="NfficiencyPD.Old_App_Code.KeyWcData" 
         InsertMethod="AddEntry" SelectMethod="GetEntries" 
-        TypeName="RDImageGallery_WebRole.Old_App_Code.KeyWCAccess" 
+        TypeName="NfficiencyPD.Old_App_Code.KeyWCAccess" 
         UpdateMethod="AddEntry">
     </asp:ObjectDataSource>
 

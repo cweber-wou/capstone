@@ -15,6 +15,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 
+
 namespace RDImageGallery_WebRole.Old_App_Code
 {
     public class Tester
@@ -64,7 +65,15 @@ namespace RDImageGallery_WebRole.Old_App_Code
             LinkedList<Report> output = new LinkedList<Report>();
         }
 
-        //run the tests -1 is undefined test
+        static public LinkedList<string> getWordlist()
+        {
+            LinkedList<string> wordlist = new LinkedList<string>();
+            foreach (Word w in WordDB.GetWords())
+            {
+                wordlist.AddLast(w.Value);
+            }
+            return wordlist;
+        }
 
         public LinkedList<Report> getReports()
         {
@@ -72,25 +81,7 @@ namespace RDImageGallery_WebRole.Old_App_Code
         }
         public int run(string aGUID)
         {
-            //int changed = 0;
-            //inRestults= getdata(aID);
-            // Create a temp linked list 
-            //type = 1;
-            //string c;
-            //LinkedList<string> input = new LinkedList<string>();
-            //c = "this is a test";
-            //input.AddFirst(c);
-            //c = "this is a test";
-            //input.AddFirst(c);
-            //c = "this is a test";
-            //input.AddFirst(c);
-            //Paper x = new Paper();
-            //x.Data = input;
-            //x.AID = "2";
-            //x.Link = "this is a test link";
-            //x.UserID = "TestUser";
-            //LinkedList<Paper> retrived = new LinkedList<Paper>();
-            //retrived.AddLast(x);
+            
             assignmentReturn ar = new assignmentReturn();
             LinkedList<Paper> retrived;
             if (aGUID != null)
@@ -104,7 +95,7 @@ namespace RDImageGallery_WebRole.Old_App_Code
             LinkedList<Report> output = new LinkedList<Report>();
 
 
-            //LinkedList<Report> oResults=new LinkedList<Report>();
+           
             LinkedListNode<Paper> currentPaper = retrived.First;
             switch (type)
             {
@@ -124,26 +115,77 @@ namespace RDImageGallery_WebRole.Old_App_Code
 
 
                     break;
-                case 2: 
+                case 2:
+                    Paper found=null;
+                    foreach (Paper current in retrived)
+                    {
+                        if (current.FileName == "Dictonary.txt")
+                        {
+                            found = current;
+                  
+                        }
+                    }
+
                     
-                    Parallel.ForEach(retrived, current =>
+                    
+                    LinkedList<string> words;
+                    if (found != null)
+                    {
+                        words = found.Data;
+                        retrived.Remove(found);
+
+                        //replace word list
+                    }
+                    else
+                    {
+                        words = getWordlist();
+                    }
+                    foreach(Paper current in retrived)
                         {
                             this.tested++;
                             Report report = new Report(current);
                             report.TypeID = 2;
-                            report.KeyData=keywc.count(current.Data);
+                            report.KeyData=keywc.count(current.Data,words);
                             reports.AddLast(report);
+                            
                             //currentPaper = currentPaper.Next;
-                        });
-                    //while (currentPaper != null)
-                    //{
-                    //    this.tested++;
-                    //    Report currentReport = new Report(currentPaper.Value);
-                    //    currentReport.TypeID = 2;
-                    //    Thread t = new Thread();     //(keywc.count(currentPaper.Value.Data,currentReport));
-                    //    reports.AddLast(currentReport);
-                    //    currentPaper = currentPaper.Next;
-                    //}
+                        }
+                    Parallel.ForEach(reports, current =>//spawn threads for every report
+                    {
+                       
+                        LinkedListNode<Report> testing = reports.First;// grab first not to compare to all documents
+                        while (testing != null)
+                        {
+                            Compare store = new Compare();
+                            int total = 0;
+                            foreach (KeyValuePair<string, int> word in current.KeyData)
+                            {
+                                //setup keys we are dealing with
+                                string key = word.Key;
+                                
+                                //get values
+                                int value1 = word.Value;
+                                int value2;
+                                while (!(testing.Value.KeyData.TryGetValue(key, out value2))) ;
+                                //Calculate
+                                int result = Math.Abs(value1 - value2);
+                                total += result;
+                                //save data
+                                while (!(store.Data.TryAdd(key, result))) ;
+
+
+                            }
+                            int wc = 0;
+                            while (!(store.Data.TryGetValue("WC",out wc)));
+                            total -= wc;
+                            while (!(store.Data.TryAdd("Total", total))) ;//add total to the dictionary before we continue
+                            store.Key = current.UserID +"*"+ testing.Value.UserID;//format is GUID*GUID
+                            current.Compared.AddLast(store);
+                            testing = testing.Next;// go to next report
+                        }
+                        
+                    });
+                    
 
                     break;
                 case 3://n-word
@@ -153,8 +195,7 @@ namespace RDImageGallery_WebRole.Old_App_Code
                 default:
                     return -1;
             }
-            // put results into results tables
-            // changed = sqlinsert(oresults); // number of rows added to the tables
+           
 
 
             return this.tested;

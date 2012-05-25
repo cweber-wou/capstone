@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RDImageGallery_WebRole.Course {
+namespace NfficiencyPD.Course {
     
     
     public partial class dynamicStudentBlob {

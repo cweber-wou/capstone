@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RDImageGallery_WebRole
+namespace NfficiencyPD
 {
     public partial class WebForm1 : System.Web.UI.Page
     {

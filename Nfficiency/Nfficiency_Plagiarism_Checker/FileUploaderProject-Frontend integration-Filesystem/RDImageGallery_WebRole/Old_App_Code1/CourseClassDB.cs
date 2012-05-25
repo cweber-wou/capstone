@@ -81,7 +81,7 @@ using System;
     private static string GetConnectionString()
     {
         return ConfigurationManager.ConnectionStrings
-            ["justin_dbConnectionString"].ConnectionString;
+            ["Nfficiency_dbConnectionString"].ConnectionString;
     }
 
     [DataObjectMethod(DataObjectMethodType.Insert)]

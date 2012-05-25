@@ -16,21 +16,8 @@ public partial class _Default : System.Web.UI.Page
         if (Request.IsAuthenticated)
         {
             WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!\n You are enrolled in:\n" ;
-            
-            // Get User Data from FormsAuthenticationTicket and show it in WelcomeBackMessage
-            //FormsIdentity ident = User.Identity as FormsIdentity;
-            //if (ident != null)
-            //{
-            //    FormsAuthenticationTicket ticket = ident.Ticket;
-            //    string userDataString = ticket.UserData;
-
-            //    // Split on the |
-            //    string[] userDataPieces = userDataString.Split("|".ToCharArray());
-            //    string companyName = userDataPieces[0];
-            //    string titleAtCompany = userDataPieces[1];
-
-            //    WelcomeBackMessage.Text += string.Format(" You are the {0} of {1}.", titleAtCompany, companyName);
-            //}
+            lblUserName.Text = User.Identity.Name; // used for grid view load.
+        
 
             // Reference the CustomPrincipal / CustomIdentity
             CustomIdentity ident = User.Identity as CustomIdentity;
@@ -50,6 +37,6 @@ public partial class _Default : System.Web.UI.Page
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
         string course_id = Convert.ToString(GridView1.SelectedRow.Cells[2].Text);
-        Response.Redirect("~/Course/dynamicBlob.aspx?id=" + course_id); //String is redirected here passed to dynamicStudentBlob
+        Response.Redirect("~/Instructor/instCourseHome.aspx?id=" + course_id); //String is redirected here passed to dynamicStudentBlob
     }
 }

@@ -35,7 +35,7 @@ namespace CS430_ASPNET_Role_Records.User_Mng
             lblInfo.Text = Course_ID;
 
             // Selects the Course_EnrollmentKey from courses by matching the Course_ID
-            string connectionString = ConfigurationManager.ConnectionStrings["justin_dbConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Nfficiency_dbConnectionString"].ConnectionString;
             string selectSql = "Select Course_EnrollmentKey From Courses Where Course_ID = @courseID";
             lblInfo.Text = selectSql.ToString();
             using (SqlConnection myConnection = new SqlConnection(connectionString))
@@ -52,7 +52,7 @@ namespace CS430_ASPNET_Role_Records.User_Mng
             }
 
             // Selects the Course_Name from courses by matching the Course_ID
-            string connectionStringCN = ConfigurationManager.ConnectionStrings["justin_dbConnectionString"].ConnectionString;
+            string connectionStringCN = ConfigurationManager.ConnectionStrings["Nfficiency_dbConnectionString"].ConnectionString;
             string selectSqlCN = "Select Course_Name From Courses Where Course_ID = @courseID";
            using (SqlConnection myConnectionCN = new SqlConnection(connectionString))
             {
@@ -88,7 +88,7 @@ namespace CS430_ASPNET_Role_Records.User_Mng
             {
                
             // Insert a new record into Enrollment
-             string connectionString = ConfigurationManager.ConnectionStrings["justin_dbConnectionString"].ConnectionString;
+             string connectionString = ConfigurationManager.ConnectionStrings["Nfficiency_dbConnectionString"].ConnectionString;
              string insertSql = "INSERT INTO Enrollment(User_ID, Course_ID, eCourse_Name) VALUES(@User_ID, @Course_ID, @eCourse_Name)";
 
              using (SqlConnection myConnection = new SqlConnection(connectionString))

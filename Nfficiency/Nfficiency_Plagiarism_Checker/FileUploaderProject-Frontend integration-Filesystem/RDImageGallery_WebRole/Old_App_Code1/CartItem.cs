@@ -13,14 +13,14 @@ public class CartItem
 {
     public CartItem() { }
 
-    public CartItem(Product product, int quantity)
+    public CartItem(AssignmentClass product, int quantity)
     {
         this.Product = product;
         this.Quantity = quantity;
         
     }
 
-    public Product Product { get; set; }
+    public AssignmentClass Product { get; set; }
     public int Quantity { get; set; }
    
 
@@ -40,7 +40,7 @@ public class CartItem
     {
            
         
-    string displayString = "Course_ID  " + Product.Course_id + "  aGUID " + Product.aGUID + " AssignmentNumber" + Product.assignmentNumber + " Number of Assignment" + Product.Num_Assignment;
+    string displayString = "Course_ID: " + Product.Course_id + "  -aGUID: " + Product.aGUID + " -AssignmentNumber: " + Product.assignmentNumber + " -Number of Assignment: " + Product.Num_Assignment + " -Description: " + Product.descripton;
         return displayString;
     }
 

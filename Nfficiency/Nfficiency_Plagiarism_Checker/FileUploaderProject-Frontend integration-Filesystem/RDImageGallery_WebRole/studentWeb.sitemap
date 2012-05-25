@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  
+  <siteMapNode title="Home">
+    
+            <siteMapNode url="~/Default.aspx" title="Main">
+            <siteMapNode url="~/Usr_Mng/frmUsrMngr.aspx" title="Go To Courses" />
+              <siteMapNode url="~/User_Mng/frmEnrollUser.aspx" title="Enroll In Course" />
+           </siteMapNode>  
+            <siteMapNode title="Membership">
+            <siteMapNode url="~/Membership/EnhancedCreateUserWizard.aspx" title="Creating User Accounts" />
+                </siteMapNode>
+        
+        
+    </siteMapNode>
+</siteMap>

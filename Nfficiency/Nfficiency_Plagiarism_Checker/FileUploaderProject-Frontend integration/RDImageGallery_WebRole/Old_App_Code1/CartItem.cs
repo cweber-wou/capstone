@@ -38,9 +38,9 @@ public class CartItem
     //**********************************************
     public string Display()
     {
-           
-        
-    string displayString = "Course_ID  " + Product.Course_id + "  aGUID " + Product.aGUID + " AssignmentNumber" + Product.assignmentNumber + " Number of Assignment" + Product.Num_Assignment;
+
+
+        string displayString = "Course_ID: " + Product.Course_id + "  -aGUID: " + Product.aGUID + " -AssignmentNumber: " + Product.assignmentNumber + " -Number of Assignment: " + Product.Num_Assignment + " -Description: " + Product.descripton;
         return displayString;
     }
 

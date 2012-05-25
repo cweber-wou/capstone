@@ -9,7 +9,8 @@ namespace CS430_ASPNET_Role_Records
 {
     public partial class frmUsrMngr : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+
+       protected void Page_Load(object sender, EventArgs e)
         {
            
             lblUser_ID.Text = User.Identity.Name.ToString();

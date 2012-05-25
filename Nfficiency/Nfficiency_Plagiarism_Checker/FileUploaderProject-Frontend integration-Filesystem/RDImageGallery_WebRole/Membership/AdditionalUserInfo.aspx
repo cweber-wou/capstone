@@ -21,7 +21,7 @@
     </asp:DetailsView>
     
     <asp:SqlDataSource ID="UserProfileDataSource" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:SecurityTutorialsConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:Nfficiency_SecurityConnectionString %>" 
         
         SelectCommand="SELECT [UserId], [HomeTown], [HomepageUrl], [Signature] FROM [UserProfiles] WHERE ([UserId] = @UserId)" 
         onselecting="UserProfileDataSource_Selecting" UpdateCommand="UPDATE UserProfiles SET

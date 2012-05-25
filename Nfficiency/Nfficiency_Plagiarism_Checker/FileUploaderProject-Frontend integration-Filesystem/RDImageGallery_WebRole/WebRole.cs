@@ -1,29 +1,29 @@
 ﻿//WebRole.cs
 
 using System.Linq;
-using Microsoft.WindowsAzure.ServiceRuntime;
+//using Microsoft.WindowsAzure.ServiceRuntime;
 
-namespace RDImageGallery_WebRole
+namespace NfficiencyPD
 {
-    public class WebRole : RoleEntryPoint
+    public class WebRole 
     {
-        public override bool OnStart()
-        {
+      //  public override bool OnStart()
+      //  {
             // For information on handling configuration changes
             // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
-            RoleEnvironment.Changing += RoleEnvironmentChanging;
+            //RoleEnvironment.Changing += RoleEnvironmentChanging;
 
-            return base.OnStart();
+ //           return base.OnStart();
         }
 
-        private void RoleEnvironmentChanging(object sender, RoleEnvironmentChangingEventArgs e)
-        {
+   //     private void RoleEnvironmentChanging(object sender, RoleEnvironmentChangingEventArgs e)
+     //   {
             // If a configuration setting is changing
-            if (e.Changes.Any(change => change is RoleEnvironmentConfigurationSettingChange))
-            {
+       //     if (e.Changes.Any(change => change is RoleEnvironmentConfigurationSettingChange))
+         //   {
                 // Set e.Cancel to true to restart this role instance
-                e.Cancel = true;
-            }
-        }
-    }
+          //      e.Cancel = true;
+            //}
+       // }
+  //  }
 }

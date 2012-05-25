@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace RDImageGallery_WebRole.Old_App_Code
+namespace NfficiencyPD.Old_App_Code
 {
     public class Report
     {

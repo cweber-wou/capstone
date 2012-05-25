@@ -1,33 +1,23 @@
-﻿///////////////////////////////////////////////////////////////////////////
-//
-//	File: OrderPage.cs
-//	Author: Chris Kessel
-//	e-mail: chriskessel@comcast.net
-//	CS420 WOU Fall term 2011
-//	Group #5 Application 
-//
-//////////////////////////////////////////////////////////////////////////
-
+﻿
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.ServiceRuntime;
-using Microsoft.WindowsAzure.StorageClient;
-using Microsoft.WindowsAzure.StorageClient.Protocol;
+using RDImageGallery_WebRole.Old_App_Code1;
 
 
 public partial class OrderPage : System.Web.UI.Page
 {
     private CartItemList cart; // class CartItemList type
+    private CartItemList newCart; // Holds only new items to be added 
     private Product selectedProduct; //class Product type 
     
     private string course_id;
-    private int count;
+   
      string User_ID;
 
     protected void ObjectDataSource1_Updated(
@@ -102,20 +92,42 @@ public partial class OrderPage : System.Web.UI.Page
     // -Handles preconditions if page has allready submitted 
     //  a cart item. 
     //**************************************************************************
-    
+    void Page_PreRender(object sender, EventArgs e)
+    {
+       // lstCart.Items.Clear();
+    }
     
     protected void Page_Load(object sender, EventArgs e)
     {
         course_id = Request.QueryString["id"];
         User_ID = User.Identity.Name.ToString(); // Gets user that is logged in
-        
-        cart = CartItemList.GetCart();
+
+     
+        lstCart.Items.Clear();
+        if (IsPostBack) // On Postback
+        {
+            cart = new CartItemList();
+            newCart = new CartItemList();
+            cart = CartItemList.GetCart();
+            newCart = CartItemList.GetNewCart();
+        }
+        if (!IsPostBack) // Not postback, inital load
+        {
+            CartItemList.newCart();
+            cart = new CartItemList();
+            newCart = new CartItemList();
+            cart = CartItemList.GetCart();
+            List<Product> productList = new List<Product>();
+            //productList = ProductDB.GetProduct();
+            productList = ProductDB.GetProductCID(course_id);
+            foreach (Product p in productList)
+            {
+                cart.AddItem(p, Convert.ToInt32(p.Course_id), Convert.ToInt32(p.assignmentNumber));
+            }
             
-       
-       
-        if (!IsPostBack)
             this.DisplayCart(); // Make this load the course assignments
-             
+           // this.DisplayNewCart();
+        } 
     }
 
     //**************************************************************************
@@ -135,34 +147,43 @@ public partial class OrderPage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e, int cus_id)
     {
        course_id = Request.QueryString["id"];           //row["Customer_id"].ToString();
-      
+      if (!IsPostBack)
 
-        if (!IsPostBack)        
-       
-        if (!IsPostBack)
-            this.DisplayCart();
+          if (!IsPostBack)
+          {
+              this.DisplayCart();
+          //    this.DisplayNewCart();
+          }
             }
 
     /// <summary>
-    /// //////////////////BLOB Methods//////////////////////////////////////////////
+    /// //////////////////Create Folder Methods//////////////////////////////////////////////
+    /// ///////////////// This could be done recursavely
     /// </summary>
     /// <param name="aGUID"></param>
-    protected void createBlob(String aGUID)
+    protected void createFolder(String locPath, String inCourse_ID, String aGUID)
     {
+        string activeDir = locPath;
+        string newPath = System.IO.Path.Combine(activeDir, inCourse_ID); // generates new path
+        DirectoryInfo dir = new DirectoryInfo(activeDir); //Checks if the Parent directory exists
+        if (!dir.Exists )
+        {
+            dir.Create();
+        }
+        else
+            // Create the subfolder under activeDir
+            System.IO.Directory.CreateDirectory(newPath);
 
-        // Retrieve storage account from connection-string
-        CloudStorageAccount storageAccount = CloudStorageAccount.Parse(RoleEnvironment.GetConfigurationSettingValue("DataConnectionString"));
-
-        // Create the blob client 
-        CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-
-        // Retrieve a reference to a container 
-        CloudBlobContainer container = blobClient.GetContainerReference(aGUID);
-
-        // Create the container if it doesn't already exist
-        container.CreateIfNotExist();
-        //Don't think this NEEDS to be here.........
-        container.SetPermissions(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob }); 
+        activeDir = newPath;
+        newPath = System.IO.Path.Combine(activeDir, aGUID);
+        dir = new DirectoryInfo(activeDir); //Checks if the Parent directory exists
+        if (!dir.Exists )
+        {
+            dir.Create();
+        }
+        else
+            // Create the subfolder under activeDir
+            System.IO.Directory.CreateDirectory(newPath);
     }
    
     protected void btnAdd_Click(object sender, EventArgs e)
@@ -178,24 +199,30 @@ public partial class OrderPage : System.Web.UI.Page
             this.selectedProduct.assignmentNumber = locCount.ToString();
             this.selectedProduct.aGUID = Guid.NewGuid().ToString();
             this.selectedProduct.Num_Assignment = locCount;
+            this.selectedProduct.descripton = txtDescription.Text;
+
             CartItem cartItem = new CartItem();
-            
+            CartItem newCartItem = new CartItem();
             int Num_Assignments=0;
             int assignment = 1; //will be produced from loop according to Num_Assignments
             cart = CartItemList.GetCart();
             cartItem = cart[selectedProduct.Course_id];
-           
+            newCartItem = cart[selectedProduct.Course_id];
+
             if (cartItem == null)
             {
                 cart.AddItem(selectedProduct, Num_Assignments,assignment);
+                newCart.AddItem(selectedProduct, Num_Assignments, assignment);
             }
             else
             {
                 cart.AddItem(selectedProduct, Num_Assignments, assignment);
+                newCart.AddItem(selectedProduct, Num_Assignments, assignment);
                 cartItem.AddQuantity(1);
+                newCartItem.AddQuantity(1);
             }
             this.DisplayCart();
-            
+      //      this.DisplayNewCart();
         }
     }
 
@@ -225,7 +252,6 @@ public partial class OrderPage : System.Web.UI.Page
     //********************************************
     private void DisplayCart()
     {
-        
         lstCart.Items.Clear();
         CartItem item;
         for (int i = 0; i < cart.Count; i++)
@@ -234,6 +260,26 @@ public partial class OrderPage : System.Web.UI.Page
             lstCart.Items.Add(item.Display());
         }
     }
+
+    //*********************************************
+    //
+    // Displays local newCart
+    //
+    //********************************************
+    private void DisplayNewCart()
+    { 
+  //  lstNewCart.Items.Clear();
+  //      CartItem item;
+  //      for (int i = 0; i < cart.Count; i++)
+  //      {
+  //          item = newCart[i];
+  //          lstNewCart.Items.Add(item.Display());
+  //      }
+    }
+    
+    
+    
+    
     protected void btnRemove_Click(object sender, EventArgs e)
     {
         if (cart.Count > 0)
@@ -253,41 +299,59 @@ public partial class OrderPage : System.Web.UI.Page
             cart.Clear();
             lstCart.Items.Clear();
         }
+        if (newCart.Count > 0)
+        {
+            newCart.Clear();
+            lstNewCart.Items.Clear();
+        }
     }
 
     //****************************************************************
     //
-    // Adds items to pizzaProduct
-    // pizzaSelectedProduct is the local instance of pizza order cart
+    // Adds items to Cart
+    // Adds items to sql 
+    // Creates folder for the course
+    //
     //****************************************************************
     private void compileCart()
     {
-
         lstCart.Items.Clear();
         CartItem item;
-        
+        CartItem oldItem;
+
+        //Checks that all folders associated with the list are present in the file structure
+        //List is populated from Assignments DB
         for (int i = 0; i < cart.Count; i++)
         {
-            item = cart[i];
-            lstCart.Items.Add(item.Display());
-            ProductDB.InsertOrder(item.Product);
-            createBlob(item.Product.aGUID);
-            course_id = item.Product.Course_id.ToString();
+            oldItem = cart[i];
+            string activeDir = CreateFileOrFolder.getActiveDir(); // should retun current path + FileRepository
+            createFolder(activeDir, oldItem.Product.Course_id, oldItem.Product.aGUID); //Checks if the course folder exists, else it creates it
+            course_id = oldItem.Product.Course_id.ToString();
         }
 
-        
-        //Response.Redirect("frmEnrollUserVarification.aspx?id=" + Course_ID); 
-        Response.Redirect("dynamicBlob.aspx?id=" + course_id); //String is redirected here 
+
+        for (int i = 0; i < newCart.Count; i++)
+        {
+           
+            item = newCart[i];
+            lstCart.Items.Add(item.Display());
+            lstNewCart.Items.Add(item.Display());
+            ProductDB.InsertOrder(item.Product); //I don't need to add all items, just the new ones
+            string activeDir = CreateFileOrFolder.getActiveDir(); // should retun current path + FileRepository
+            createFolder(activeDir, item.Product.Course_id, item.Product.aGUID); //Checks if the course folder exists, else it creates it
+            course_id = item.Product.Course_id.ToString();
+        }
+        Response.Redirect("instCourseHome.aspx?id=" + course_id); //String is redirected here 
     }
 
     protected void btn_AddAssignment_Click(object sender, EventArgs e)
     {
-        compileCart();
+        compileCart(); //We know what this does now don't we.
     }
 
     protected void btnAssignmentBlob_Click(object sender, EventArgs e)
     {
-        Response.Redirect("dynamicBlob.aspx?id=" + course_id); //String is redirected here 
+        Response.Redirect("dynamicBlob.aspx?id=" + course_id); //Page is redirected here passing the course_id value 
     }
 
    
