@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SecurityTutorialsConnectionString-Web.config Connection String" description="SecurityTutorialsConnectionString Connection String used in web.config by the application to access the database." defaultvalue="Data Source=199.193.232.16;Initial Catalog=nifficiency_users;Persist Security Info=True;User ID=Nfficiency_Login;Password=Nfficiencyconnect!1" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Acidraven\\Desktop\\CS430\\Nfficiency_Plagiarism_Checker\\FileUploaderProject-Frontend\ integration\\RDImageGallery_WebRole\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SecurityTutorialsConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="justin_dbConnectionString-Web.config Connection String" description="justin_dbConnectionString Connection String used in web.config by the application to access the database." defaultvalue="Data Source=199.193.232.16,1433;Network Library=DBMSSOCN;Initial Catalog=CS430_CourseAssignmentStudent;User ID=Nfficiency_Login;Password=Nfficiencyconnect!1;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Acidraven\\Desktop\\CS430\\Nfficiency_Plagiarism_Checker\\FileUploaderProject-Frontend\ integration\\RDImageGallery_WebRole\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='justin_dbConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="HalloweenConnectionString-Web.config Connection String" description="HalloweenConnectionString Connection String used in web.config by the application to access the database." defaultvalue="Data Source=CHRISPC\SQLEXPRESS;Initial Catalog=Halloween;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Acidraven\\Desktop\\CS430\\Nfficiency_Plagiarism_Checker\\FileUploaderProject-Frontend\ integration\\RDImageGallery_WebRole\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HalloweenConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="accountdbConnectionString-Web.config Connection String" description="accountdbConnectionString Connection String used in web.config by the application to access the database." defaultvalue="Data Source=.;Initial Catalog=accountdb;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Acidraven\\Desktop\\CS430\\Nfficiency_Plagiarism_Checker\\FileUploaderProject-Frontend\ integration\\RDImageGallery_WebRole\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='accountdbConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

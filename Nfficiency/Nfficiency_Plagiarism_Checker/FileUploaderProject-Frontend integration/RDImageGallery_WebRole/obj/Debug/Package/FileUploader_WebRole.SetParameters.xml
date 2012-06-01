@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/FileUploader_WebRole_deploy" />
+  <setParameter name="SecurityTutorialsConnectionString-Web.config Connection String" value="Data Source=199.193.232.16;Initial Catalog=nifficiency_users;Persist Security Info=True;User ID=Nfficiency_Login;Password=Nfficiencyconnect!1" />
+  <setParameter name="justin_dbConnectionString-Web.config Connection String" value="Data Source=199.193.232.16,1433;Network Library=DBMSSOCN;Initial Catalog=CS430_CourseAssignmentStudent;User ID=Nfficiency_Login;Password=Nfficiencyconnect!1;" />
+  <setParameter name="HalloweenConnectionString-Web.config Connection String" value="Data Source=CHRISPC\SQLEXPRESS;Initial Catalog=Halloween;Integrated Security=True" />
+  <setParameter name="accountdbConnectionString-Web.config Connection String" value="Data Source=.;Initial Catalog=accountdb;Integrated Security=True" />
+</parameters>
